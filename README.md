@@ -8,10 +8,42 @@
 <h3>Main Device</h3>
 <h4>My main device is a Lenovo ThinkPad T450s. Currently running Windows 11 Pro. However, I will replace it with Arch Linux soon.</h4>
 
-<h3>Prompts</h3>
+<h2>Prompts</h2>
+<h3>PowerShell</h3>
+
+Here are instructions for when you want to use the PowerShell prompts like **[`win11-main.omp.json`](./prompts/win11-main.omp.json)**
 </div>
 
-When using the PowerShell prompts like **[`win11-main.omp.json`](./prompts/win11-main.omp.json)**, you need to create a file like `Microsoft.PowerShell_profile.ps1` and place something like this in it:
+1. First you need to install **Oh My Posh**:  
+
 ```powershell
-oh-my-posh init pwsh --config 'C:\Users\...\my-prompt.omp.json' | Invoke-Expression
+winget install JanDeDobbeleer.OhMyPosh -s winget
+```
+2. **Oh My Posh** uses special icons which need a **Nerd Font** type font  
+Download a font you like from [Nerd Fonts Downloads](https://www.nerdfonts.com/font-downloads) and install it globally and set it as a default font for your PowerShell
+
+3. Clone this repository
+```bash
+git clone https://github.com/andreansx/dotfiles ~/dotfiles
+```
+4. Find you profile path
+```powershell
+$PROFILE
+```
+5. Create a directory for your profile
+```powershell
+New-Item -ItemType Directory -Path (Split-Path $PROFILE) -Force
+```
+6. Let's say you cloned this repo to `~/dotfiles`  
+You need to clone the profile file:
+```powershell
+Copy-Item "~/dotfiles/prompts/Microsoft.PowerShell_profile.ps1" -Destination $PROFILE -Force
+```
+And clone the theme file:
+```powershell
+Copy-Item "~/dotfiles/prompts/my-prompt.omp.json" -Destination (Join-Path (Split-Path $PROFILE) "my-prompt.omp.json") -Force
+```
+7. Reload PowerShell
+```powershell
+. $PROFILE
 ```
