@@ -7,4 +7,11 @@
 
 <h3>Main Device</h3>
 <h4>My main device is a Lenovo ThinkPad T450s. Currently running Windows 11 Pro. However, I will replace it with Arch Linux soon.</h4>
+
+<h3>Prompts</h3>
 </div>
+
+When using the PowerShell prompts like **[`win11-main.omp.json`](./prompts/win11-main.omp.json)**, you need to create a file like `Microsoft.PowerShell_profile.ps1` and place something like this in it:
+```powershell
+oh-my-posh init pwsh --config 'C:\Users\...\my-prompt.omp.json' | Invoke-Expression
+```
