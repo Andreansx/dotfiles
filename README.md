@@ -9,7 +9,8 @@
 <h3>Main Device</h3>
 <h4>My main device is a Lenovo ThinkPad T450s. Currently running Windows 11 Pro. However, I will replace it with Arch Linux soon.</h4>
 <h2>Screenshots</h2>
-I will place screenshots of desktops here
+Debian on Proxmox
+<img src="./media/IMG_2487.png">
 <h2>Prompts</h2>
 <h3>PowerShell</h3>
 
