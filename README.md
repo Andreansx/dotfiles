@@ -23,7 +23,7 @@ Here are instructions for when you want to use the PowerShell prompts like **[`w
 winget install JanDeDobbeleer.OhMyPosh -s winget
 ```
 2. **Oh My Posh** uses special icons which need some type of **Nerd Font**    
-Download a font you like from [Nerd Fonts Downloads](https://www.nerdfonts.com/font-downloads),install it globally on your PC and set it as a default font for your PowerShell terminal
+Download a font you like from [Nerd Fonts Downloads](https://www.nerdfonts.com/font-downloads),install it globally on your PC and set it as a default font for your PowerShell terminal. I recommend **Fira Code Nerd Font**
 
 4. Clone this repository
 ```bash
