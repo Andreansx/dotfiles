@@ -8,10 +8,16 @@
 >[!IMPORTANT]
 >I will try to make the repository as organised as I can but the themes and styles need to be installed manually. Maybe in some time I will make a script for installation
 <div align="center">
-<h3>Main Device</h3>
-<h4>My main device is a Lenovo ThinkPad T450s. Running Arch Linux with GNOME Desktop Environment</h4>
+<h3>Main Rice</h3>
+</div>
+
+*   Hardware:   **ThinkPad T450s**  
+*   OS: **Arch Linux**  
+*   DE: **GNOME 48.2**  
+*   Terminal: **Kitty 0.42.1**  
+*   Terminal font: **BlexMonoNF**  
+
 <h2>Screenshots</h2>
-Native Arch with Gnome on T450s
 <img src="./media/preview.png">
 
 
@@ -27,6 +33,9 @@ pacman -S ttf-meslo-nerd
 >[!TIP]
 >If the font you like isn't available in the Arch extras repository, you can grab it using `yay` or `paru`
 
+```bash
+yay -S ttf-ibmplex-mono-nerd
+```
 <div align="center">
 <h2>Prompts</h2>
 <h2>PowerShell prompt installation</h2>
