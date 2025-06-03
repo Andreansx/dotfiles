@@ -19,9 +19,10 @@ Native Arch with Gnome on T450s
 yay -S ttf-meslo-nerd
 ```
 <h2>Prompts</h2>
-<h3>PowerShell</h3>
+<h2>PowerShell prompt installation</h2>
 
-Here are instructions for when you want to use the PowerShell prompts like **[`win11-main.omp.json`](./PowerShell/win11-main.omp.json)**
+Installing the styles for PowerShell can be a bit more compilacted than just copying to **`~/.bashrc`**
+
 </div>
 
 1. First you need to install **Oh My Posh**:  
@@ -34,7 +35,7 @@ Download a font you like from [Nerd Fonts Downloads](https://www.nerdfonts.com/f
 
 4. Clone this repository
 ```bash
-git clone https://github.com/andreansx/dotfiles ~/dotfiles
+git clone https://github.com/andreansx/dotfiles ./dotfiles
 ```
 4. Find you profile path
 ```powershell
@@ -45,13 +46,13 @@ $PROFILE
 New-Item -ItemType Directory -Path (Split-Path $PROFILE) -Force
 ```
 6. Let's say you cloned this repo to `~/dotfiles`  
-You need to clone the profile file:
+You need to clone the profile file, for example the **[`Microsoft.PowerShell_profile.ps1`](./PowerShell/Microsoft.PowerShell_profile.ps1)**:
 ```powershell
-Copy-Item "~/dotfiles/PowerShell/Microsoft.PowerShell_profile.ps1" -Destination $PROFILE -Force
+Copy-Item "./dotfiles/PowerShell/<NAME_OF_FILE_HERE>.ps1" -Destination $PROFILE -Force
 ```
-And clone the theme file:
+And clone the theme file like **[`win11-main.omp.json`](./PowerShell/win11-main.omp.json)**
 ```powershell
-Copy-Item "~/dotfiles/PowerShell/win11-main.omp.json" -Destination (Join-Path (Split-Path $PROFILE) "win11-main.omp.json") -Force
+Copy-Item "./dotfiles/PowerShell/<NAME_OF_FILE_HERE>.omp.json" -Destination (Join-Path (Split-Path $PROFILE) "<NAME_OF_FILE_HERE>.omp.json") -Force
 ```
 7. Reload PowerShell
 ```powershell
