@@ -11,13 +11,13 @@
           "type": "session",
           "style": "powerline",
           "template": "{{ .UserName }}",
-          "foreground": "#FF1493"
+          "foreground": "#ff144f"
         },
         {
           "type": "session",
           "style": "powerline",
           "template": "@{{ .HostName }}",
-          "foreground": "#FF6EB4"
+          "foreground": "#eb117a"
         },
         {
           "type": "path",

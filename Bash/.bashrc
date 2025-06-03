@@ -48,6 +48,7 @@ alias cp='cp -i'
 alias mv='mv -i'
 
 # Change if you are using paru instead of yay
+# alias update='paru -Syu'
 alias update='yay -Syu'
 alias cleanup='yay -Sc'
 

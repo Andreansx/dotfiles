@@ -51,10 +51,11 @@ $PROFILE
 New-Item -ItemType Directory -Path (Split-Path $PROFILE) -Force
 ```
 6. Let's say you cloned this repo to `~/dotfiles`  
-You need to clone the profile file, for example the **[`Microsoft.PowerShell_profile.ps1`](./PowerShell/Microsoft.PowerShell_profile.ps1)**:
+You need to clone the profile file, for example the **[`Microsoft.PowerShell_profile.ps1`](./PowerShell/Microsoft.PowerShell_profile.ps1)** if you want to use **[`win11-main.omp.json`](./PowerShell/win11-main.omp.json)**:
 ```powershell
 Copy-Item "./dotfiles/PowerShell/<NAME_OF_FILE_HERE>.ps1" -Destination $PROFILE -Force
 ```
+Every theme needs to have a appropriately modified profile file. Mostly just need to change the file name and thats it  
 And clone the theme file like **[`win11-main.omp.json`](./PowerShell/win11-main.omp.json)**
 ```powershell
 Copy-Item "./dotfiles/PowerShell/<NAME_OF_FILE_HERE>.omp.json" -Destination (Join-Path (Split-Path $PROFILE) "<NAME_OF_FILE_HERE>.omp.json") -Force
