@@ -11,6 +11,13 @@
 <h2>Screenshots</h2>
 Native Arch with Gnome on T450s
 <img src="./media/IMG_3462.png">
+
+
+<h2>Fonts</h2>
+
+```bash
+yay -S ttf-meslo-nerd
+```
 <h2>Prompts</h2>
 <h3>PowerShell</h3>
 
