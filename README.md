@@ -14,10 +14,15 @@ Native Arch with Gnome on T450s
 
 
 <h2>Fonts</h2>
+</div>
+
+The configuration files for Kitty require a **Nerd Font**. You can install one using `pacman`:
 
 ```bash
-yay -S ttf-meslo-nerd
+pacman -S ttf-meslo-nerd
 ```
+If the font you like isn't available in the Arch extras repository, you can grab it using `yay` or `paru`
+<div align="center">
 <h2>Prompts</h2>
 <h2>PowerShell prompt installation</h2>
 
