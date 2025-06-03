@@ -1,4 +1,8 @@
 # ~/.bashrc
+# You need to use vivid if you want to have better colors
+# run: pacman -S vivid
+# look at line 187
+
 
 case $- in
     *i*) ;;
