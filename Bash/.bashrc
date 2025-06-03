@@ -88,7 +88,7 @@ extract() {
 MONOKAI_BG="39;40;34"        #272822
 MONOKAI_FG="248;248;242"     #F8F8F2
 MONOKAI_COMMENT="117;113;94"  #75715E
-MONOKAI_PINK="249;38;114"     #F92672
+MONOKAI_PINK="249;38;114"     #F92672  <-- Twój hot pink
 MONOKAI_GREEN="166;226;46"    #A6E22E
 MONOKAI_YELLOW="230;219;116"  #E6DB74
 MONOKAI_PURPLE="174;129;255"  #AE81FF
@@ -102,9 +102,9 @@ RESET_COLORS="\[\e[0m\]"
 SEPARATOR_RIGHT=""
 SEPARATOR_LEFT=""
 GIT_BRANCH_SYMBOL=""
-PATH_SEPARATOR=""
+PATH_SEPARATOR="" # Nie jest używany w aktualnym prompt, ale zostawiam
 USER_SYMBOL=""
-HOST_SYMBOL="󰒋" 
+HOST_SYMBOL="󰒋" # Nie jest używany w aktualnym prompt, ale zostawiam
 PROMPT_SYMBOL_USER="❯"
 PROMPT_SYMBOL_ROOT="#"
 ERROR_SYMBOL="✘"
@@ -123,7 +123,7 @@ parse_git_branch_and_status() {
     fi
     echo "${GIT_BRANCH_SYMBOL} ${branch_name}${dirty_status}"
   else
-    echo "" 
+    echo ""
   fi
 }
 
@@ -132,29 +132,48 @@ build_prompt() {
 
   local PS1_TEXT=""
 
+  # Segment: User@Host
+  # Tło: MONOKAI_PURPLE, Tekst: MONOKAI_BG
   PS1_TEXT+="$(TC_BG ${MONOKAI_PURPLE})$(TC_FG ${MONOKAI_BG}) ${USER_SYMBOL} \u@\h "
 
-  PS1_TEXT+="$(TC_BG ${MONOKAI_BLUE})$(TC_FG ${MONOKAI_PURPLE})${SEPARATOR_RIGHT}"
-  PS1_TEXT+="$(TC_FG ${MONOKAI_FG}) \w " 
+  # Segment: Ścieżka
+  # Tło: MONOKAI_PINK (nowy kolor)
+  # Tekst: MONOKAI_FG (białawy, dla dobrego kontrastu na różowym)
+  # Separator między User@Host a Ścieżką:
+  # - Tło separatora: MONOKAI_PINK (tło segmentu ścieżki)
+  # - Kolor znaku separatora: MONOKAI_PURPLE (tło poprzedniego segmentu User@Host)
+  PS1_TEXT+="$(TC_BG ${MONOKAI_PINK})$(TC_FG ${MONOKAI_PURPLE})${SEPARATOR_RIGHT}"
+  PS1_TEXT+="$(TC_FG ${MONOKAI_FG}) \w " # Tekst ścieżki na tle MONOKAI_PINK
 
   local git_info
   git_info=$(parse_git_branch_and_status)
   if [[ -n "$git_info" ]]; then
     local git_color_bg=${MONOKAI_GREEN}
-    if [[ "$git_info" == *"*"* ]]; then 
-      git_color_bg=${MONOKAI_YELLOW}
+    if [[ "$git_info" == *"*"* ]]; then
+      git_color_bg=${MONOKAI_YELLOW} # Zmienione na żółty jeśli są zmiany
     fi
-    PS1_TEXT+="$(TC_BG ${git_color_bg})$(TC_FG ${MONOKAI_BLUE})${SEPARATOR_RIGHT}"
-    PS1_TEXT+="$(TC_FG ${MONOKAI_BG}) ${git_info} "
+    # Segment: Git
+    # Separator między Ścieżką a Git:
+    # - Tło separatora: git_color_bg (tło segmentu Git)
+    # - Kolor znaku separatora: MONOKAI_PINK (tło poprzedniego segmentu Ścieżka)
+    PS1_TEXT+="$(TC_BG ${git_color_bg})$(TC_FG ${MONOKAI_PINK})${SEPARATOR_RIGHT}"
+    PS1_TEXT+="$(TC_FG ${MONOKAI_BG}) ${git_info} " # Tekst Git
+    # Separator po segmencie Git (do końca linii)
+    # - Tło separatora: MONOKAI_BG (domyślne tło terminala)
+    # - Kolor znaku separatora: git_color_bg (tło segmentu Git)
     PS1_TEXT+="$(TC_BG ${MONOKAI_BG})$(TC_FG ${git_color_bg})${SEPARATOR_RIGHT}"
   else
-    PS1_TEXT+="$(TC_BG ${MONOKAI_BG})$(TC_FG ${MONOKAI_BLUE})${SEPARATOR_RIGHT}"
+    # Jeśli nie ma informacji o Git, separator po segmencie Ścieżka (do końca linii)
+    # - Tło separatora: MONOKAI_BG (domyślne tło terminala)
+    # - Kolor znaku separatora: MONOKAI_PINK (tło segmentu Ścieżka)
+    PS1_TEXT+="$(TC_BG ${MONOKAI_BG})$(TC_FG ${MONOKAI_PINK})${SEPARATOR_RIGHT}"
   fi
 
-  PS1_TEXT+="${RESET_COLORS}"
+  PS1_TEXT+="${RESET_COLORS}" # Resetowanie kolorów na końcu pierwszej linii promptu
 
-  PS1_TEXT+="\n"
+  PS1_TEXT+="\n" # Nowa linia dla symbolu promptu
 
+  # Wyświetlanie błędu, jeśli ostatnie polecenie się nie powiodło
   if [ "$exit_status" -ne 0 ]; then
     PS1_TEXT+="$(TC_FG ${MONOKAI_PINK})${ERROR_SYMBOL} ${exit_status} ${RESET_COLORS}"
   fi
@@ -166,15 +185,16 @@ build_prompt() {
     prompt_char_color=${MONOKAI_PINK}
   fi
 
-  if [ "$UID" -eq 0 ]; then 
+  if [ "$UID" -eq 0 ]; then
     prompt_char_color=${MONOKAI_ORANGE}
     prompt_char=${PROMPT_SYMBOL_ROOT}
   fi
 
   if [ "$exit_status" -ne 0 ]; then
-    PS1_TEXT+=" "
+    PS1_TEXT+=" " # Dodatkowa spacja przed symbolem promptu, jeśli był błąd
   fi
 
+  # Symbol promptu (❯ lub #)
   PS1_TEXT+="$(TC_FG ${prompt_char_color})${prompt_char} ${RESET_COLORS}"
 
   PS1="${PS1_TEXT}"
@@ -194,3 +214,4 @@ fi
 if [ -d "$HOME/.cargo/bin" ]; then
   export PATH="$HOME/.cargo/bin:$PATH"
 fi
+
