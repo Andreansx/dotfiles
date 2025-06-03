@@ -12,7 +12,7 @@
 <h4>My main device is a Lenovo ThinkPad T450s. Running Arch Linux with GNOME Desktop Environment</h4>
 <h2>Screenshots</h2>
 Native Arch with Gnome on T450s
-<img src="./media/IMG_3462.png">
+<img src="./media/preview.png">
 
 
 <h2>Fonts</h2>
