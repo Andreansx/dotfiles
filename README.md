@@ -21,14 +21,17 @@ The configuration files for Kitty require a **Nerd Font**. You can install one u
 ```bash
 pacman -S ttf-meslo-nerd
 ```
-If the font you like isn't available in the Arch extras repository, you can grab it using `yay` or `paru`
+
+>[!TIP]
+>If the font you like isn't available in the Arch extras repository, you can grab it using `yay` or `paru`
+
 <div align="center">
 <h2>Prompts</h2>
 <h2>PowerShell prompt installation</h2>
-
-Installing the styles for PowerShell can be a bit more compilacted than just copying to **`~/.bashrc`**
-
 </div>
+
+>[!NOTE]
+>Installing the styles for PowerShell is a bit more compilacted than just copying to **`~/.bashrc`** but it's still easy to do. The difference is that you need another file besides your theme file.
 
 1. First you need to install **Oh My Posh**:  
 
