@@ -26,6 +26,11 @@
 *   Terminal: **Kitty 0.42.1**  
 *   Terminal font: **BlexMonoNF**  
 *   Cursor: **Bibata cursor Ice**
+
+# 02:
+
+![preview02](./media/preview2.png)
+
 <h2>Fonts</h2>
 </div>
 
