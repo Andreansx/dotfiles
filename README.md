@@ -8,19 +8,25 @@
 >[!IMPORTANT]
 >I will try to make the repository as organised as I can but the themes and styles need to be installed manually. Maybe in some time I will make a script for installation
 <div align="center">
-<h3>Main Rice</h3>
+<h2>Main Rice</h2>
 </div>
 
+<h2>Screenshots</h2>
+<img src="./media/preview.png">
+
+## Files
+*   **[kitty.conf](./kitty/kitty.conf)**
+*   **[.bashrc](./Bash/.bashrc)**
+*   **[wallpaper](./wallpapers/IMG_3151.jpeg)**
+*   **[fastfetch](./fastfetch/config.jsonc)**
+
+#
 *   Hardware:   **ThinkPad T450s**  
 *   OS: **Arch Linux**  
 *   DE: **GNOME 48.2**  
 *   Terminal: **Kitty 0.42.1**  
 *   Terminal font: **BlexMonoNF**  
-
-<h2>Screenshots</h2>
-<img src="./media/preview.png">
-
-
+*   Cursor: **Bibata cursor Ice**
 <h2>Fonts</h2>
 </div>
 

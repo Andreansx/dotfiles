@@ -189,7 +189,7 @@ PROMPT_COMMAND=build_prompt
 # OR
 # run 'vivid generate molokai > molokai_vivid' assuming you are in your home directory
 export LS_COLORS="$molokai_vivid"
-
+# $molokai_vivid if thats the name of the file into which you piped the output of vivid
 
 if [ -d "$HOME/.local/bin" ]; then
   export PATH="$HOME/.local/bin:$PATH"
