@@ -1,0 +1,81 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "display": {
+  	"color": {
+		"keys": "#577bca",
+		"title": "#577bc1"
+	},
+	"separator": ""
+  },
+  "logo": {
+  "source": "arch_small",
+  	"padding": {
+		"top": 2,
+  		"left": 5
+  	},
+  	"color": {
+  		"1": "#577bca",
+		"2": "#577bcf"
+  	}
+  },
+  "modules": [
+    		{
+	"type": "custom",
+	"format": "┌──────────────────────────────────┐",
+	"outputColor": "#577bca"
+	},
+		{
+	"type": "title",
+	"key": "   ",
+	"format": "{6}{7}{8}"
+	},
+		{
+        "type": "custom",
+        "format": "└──────────────────────────────────┐",
+        "outputColor": "#577bca"
+        },
+//		{
+//        "type": "custom",
+//        "format": "┌──────────────────────────────────┐",
+//        "outputColor": "#577bca"
+//        },
+    		{
+	"type": "host",
+	"key": "  » ",
+	"outputColor": "#577bc1"
+    	},
+		{
+	"type": "de",
+	"key": "  » "
+	},
+    		{
+	"type": "terminal",
+	"key":	"  » "
+	},
+    		{
+	"type": "cpu",
+	"key": "  » "
+	},
+    		{
+	"type": "memory",
+	"key": "  » "
+	},
+    		{
+	"type": "battery",
+	"key": 	"  » "
+	},
+    		{
+	"type": "poweradapter",
+	"key": 	"  » "
+	},
+		{
+	"type": "custom",
+	"format": "└─────────────────────────────────┘"
+	},
+		{
+	"type": "custom",
+	"format": " ",
+	"outputColor": "#577bc1"
+	}
+  ]
+}

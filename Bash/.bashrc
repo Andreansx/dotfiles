@@ -183,7 +183,7 @@ build_prompt() {
 
 PROMPT_COMMAND=build_prompt
 
-# S_COLORS with vivid
+# LS_COLORS with vivid
 # here is mine LS_COLORS but you need to do this:
 # run: 'vivid generate molokai' and paste the entire output into LS_COLORS
 # OR
