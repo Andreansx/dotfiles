@@ -17,7 +17,7 @@
 *   **[kitty.conf](./kitty/kitty.conf)**
 *   **[.bashrc](./Bash/.bashrc)**
 *   **[wallpaper](./wallpapers/IMG_3151.jpeg)**
-*   **[fastfetch](./fastfetch/config.jsonc)**
+*   **[fastfetch](./fastfetch/config1.jsonc)**
 
 #
 *   Hardware:   **ThinkPad T450s**  
