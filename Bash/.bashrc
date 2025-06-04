@@ -185,8 +185,10 @@ PROMPT_COMMAND=build_prompt
 
 # S_COLORS with vivid
 # here is mine LS_COLORS but you need to do this:
-# run: 'vivid generate molakai' and paste the entire output here:
-export LS_COLORS="output_of_vivid_here"
+# run: 'vivid generate molokai' and paste the entire output into LS_COLORS
+# OR
+# run 'vivid generate molokai > molokai_vivid' assuming you are in your home directory
+export LS_COLORS="$molokai_vivid"
 
 
 if [ -d "$HOME/.local/bin" ]; then
