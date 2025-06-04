@@ -31,6 +31,13 @@
 
 ![preview02](./media/preview2.png)
 
+## Files
+*   **[kitty.conf](./kitty/kitty.conf)**
+*   **[.bashrc](./Bash/.bashrc1)**
+*   **[fastfetch](./fastfetch/config2.jsonc)**
+*   **[gnome-extensions](./gnome-extensions/)**
+*   **[font](./fonts/BlexMonoNerdFont-Regular.ttf)**
+*   **[kitty-theme](./kitty/)**
 <h2>Fonts</h2>
 </div>
 
