@@ -1,17 +1,16 @@
 <div align="center">
 <h1>My dotfiles</h1>
-<h4>In this repository you will find my configuration files for terminal emulators, window managers, code editors, color themes etc.</h4>
-<img alt="Static Badge" src="https://img.shields.io/badge/arch-%231793D1?style=for-the-badge&logo=archlinux&logoColor=white&logoSize=auto">
+  <img alt="Static Badge" src="https://img.shields.io/badge/arch-%231793D1?style=for-the-badge&logo=archlinux&logoColor=white&logoSize=auto">
 <img alt="Static Badge" src="https://img.shields.io/badge/gnome-%234A86CF?style=for-the-badge&logo=gnome&logoColor=white&logoSize=auto">
+<h4>In this repository you will find my configuration files for terminal emulators, window managers, code editors, color themes etc.</br> Everything is done on Arch Linux</h4>
+
 </div>
 
 >[!IMPORTANT]
 >I will try to make the repository as organised as I can but the themes and styles need to be installed manually. Maybe in some time I will make a script for installation
-<div align="center">
-<h2>Main Rice</h2>
-</div>
 
-<h2>Screenshots</h2>
+# 01 - main rice:
+
 <img src="./media/preview.png">
 
 ## Files
