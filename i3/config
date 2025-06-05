@@ -1,0 +1,3 @@
+
+
+bindsym $super+Return exec i3-sensible-terminal
