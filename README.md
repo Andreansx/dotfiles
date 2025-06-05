@@ -30,7 +30,7 @@
 # 02:
 
 ![preview02](./media/preview2.png)
-
+![prompt preview](./media/prompt-preview2.png)
 ## Files
 *   **[kitty.conf](./kitty/kitty.conf)**
 *   **[.bashrc](./Bash/02.bashrc)**
