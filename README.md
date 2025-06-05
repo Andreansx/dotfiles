@@ -15,7 +15,7 @@
 
 ## Files
 *   **[kitty.conf](./kitty/kitty.conf)**
-*   **[.bashrc](./Bash/.bashrc)**
+*   **[.bashrc](./Bash/01.bashrc)**
 *   **[wallpaper](./wallpapers/IMG_3151.jpeg)**
 *   **[fastfetch](./fastfetch/config1.jsonc)**
 
@@ -33,7 +33,7 @@
 
 ## Files
 *   **[kitty.conf](./kitty/kitty.conf)**
-*   **[.bashrc](./Bash/1.bashrc)**
+*   **[.bashrc](./Bash/02.bashrc)**
 *   **[fastfetch](./fastfetch/config2.jsonc)**
 *   **[gnome-extensions](./gnome-extensions/)**
 *   **[font](./fonts/BlexMonoNerdFont-Regular.ttf)**
