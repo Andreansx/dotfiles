@@ -33,7 +33,7 @@
 
 ## Files
 *   **[kitty.conf](./kitty/kitty.conf)**
-*   **[.bashrc](./Bash/.bashrc1)**
+*   **[.bashrc](./Bash/1.bashrc)**
 *   **[fastfetch](./fastfetch/config2.jsonc)**
 *   **[gnome-extensions](./gnome-extensions/)**
 *   **[font](./fonts/BlexMonoNerdFont-Regular.ttf)**
