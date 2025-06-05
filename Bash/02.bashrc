@@ -93,7 +93,8 @@ extract() {
   fi
 }
 
-MONOKAI_BG="39;40;34"        #272822
+#MONOKAI_BG="39;40;34"        #272822
+MONOKAI_BG="237;242;213"	#edf2d5
 MONOKAI_FG="248;248;242"     #F8F8F2
 MONOKAI_COMMENT="117;113;94"  #75715E
 MONOKAI_PINK="38;172;249"     #F92672 
@@ -102,6 +103,8 @@ MONOKAI_YELLOW="230;219;116"  #E6DB74
 MONOKAI_PURPLE="60;95;250"  #AE81FF
 MONOKAI_ORANGE="253;151;31"   #FD971F
 MONOKAI_BLUE="102;217;239"    #66D9EF
+MONOKAI_BL="64;64;55"	#404037
+MK_D="106;48;252"	#6a30fc
 RED="226;46;82"
 
 TC_FG() { echo -ne "\[\e[38;2;${1}m\]"; }
@@ -143,7 +146,7 @@ build_prompt() {
 
   local PS1_TEXT=""
 
-  PS1_TEXT+="\n$(TC_FG ${MONOKAI_PURPLE})╭─ $(TC_BG ${MONOKAI_PURPLE})$(TC_FG ${MONOKAI_BG}) ${USER_SYMBOL} \u@\h "
+  PS1_TEXT+="\n$(TC_FG ${MK_D})╭── $(TC_BG ${MK_D})$(TC_FG ${MONOKAI_BG}) ${USER_SYMBOL}${RESET_COLORS}$(TC_BG ${MONOKAI_PURPLE})$(TC_FG ${MK_D})${SEPARATOR_RIGHT}$(TC_FG ${MONOKAI_FG})$(TC_BG ${MONOKAI_PURPLE}) \u@\h "
 
   PS1_TEXT+="$(TC_BG ${MONOKAI_PINK})$(TC_FG ${MONOKAI_PURPLE})${SEPARATOR_RIGHT}"
   PS1_TEXT+="$(TC_FG ${MONOKAI_FG})  \w " 
@@ -157,8 +160,8 @@ build_prompt() {
     fi
 
     PS1_TEXT+="$(TC_BG ${git_color_bg})$(TC_FG ${MONOKAI_PINK})${SEPARATOR_RIGHT}"
-    PS1_TEXT+="$(TC_FG ${MONOKAI_BG}) ${git_info} "
-    PS1_TEXT+="$(TC_BG ${MONOKAI_BG})$(TC_FG ${git_color_bg})${RESET_COLORS}$(TC_FG ${git_color_bg})${SEPARATOR_RIGHT}"
+    PS1_TEXT+="$(TC_FG ${MONOKAI_BL}) ${git_info} "
+    PS1_TEXT+="$(TC_BG ${MONOKAI_BL})$(TC_FG ${git_color_bg})${RESET_COLORS}$(TC_FG ${git_color_bg})${SEPARATOR_RIGHT}"
   else
 
     PS1_TEXT+="$(TC_BG ${MONOKAI_BG})$(TC_FG ${MONOKAI_PINK})${RESET_COLORS}$(TC_FG ${MONOKAI_PINK})${SEPARATOR_RIGHT}"
@@ -171,8 +174,8 @@ build_prompt() {
     PS1_TEXT+="$(TC_FG ${RED})${ERROR_SYMBOL} ${exit_status} ${RESET_COLORS}"
   fi
 
-  local prompt_char_color=${MONOKAI_PURPLE}
-  local prompt_char="╰─ ${PROMPT_SYMBOL_USER}"
+  local prompt_char_color=${MK_D}
+  local prompt_char="╰── ${PROMPT_SYMBOL_USER}"
 
   if [ "$exit_status" -ne 0 ]; then
     prompt_char_color=${MONOKAI_PINK}
