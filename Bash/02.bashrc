@@ -63,7 +63,7 @@ alias server='python -m http.server'
 alias gitpush='git push'
 alias gp='git push'
 alias gs='git status'
-alias ga='git add .'
+alias ga='git add . && git status'
 alias gc='git commit'
 
 mkcd() {
@@ -157,7 +157,7 @@ build_prompt() {
 
     PS1_TEXT+="$(TC_BG ${git_color_bg})$(TC_FG ${MONOKAI_PINK})${SEPARATOR_RIGHT}"
     PS1_TEXT+="$(TC_FG ${MONOKAI_BG}) ${git_info} "
-    PS1_TEXT+="$(TC_BG ${MONOKAI_BG})$(TC_FG ${git_color_bg})${SEPARATOR_RIGHT}"
+    PS1_TEXT+="$(TC_BG ${MONOKAI_BG})$(TC_FG ${git_color_bg})${RESET_COLORS}$(TC_FG ${git_color_bg})${SEPARATOR_RIGHT}"
   else
 
     PS1_TEXT+="$(TC_BG ${MONOKAI_BG})$(TC_FG ${MONOKAI_PINK})${RESET_COLORS}$(TC_FG ${MONOKAI_PINK})${SEPARATOR_RIGHT}"
