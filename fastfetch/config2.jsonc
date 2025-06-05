@@ -3,7 +3,7 @@
   "display": {
   	"color": {
 		"keys": "#577bca",
-		"title": "#577bc1"
+		"title": "#85abff"
 	},
 	"separator": ""
   },
@@ -21,17 +21,17 @@
   "modules": [
     		{
 	"type": "custom",
-	"format": "┌──────────────────────────────────┐",
+	"format": "╭──────────────────────────────────╮",
 	"outputColor": "#577bca"
 	},
 		{
 	"type": "title",
-	"key": "   ",
+	"key": "           ",
 	"format": "{6}{7}{8}"
 	},
 		{
         "type": "custom",
-        "format": "└──────────────────────────────────┐",
+        "format": "╰──────────────────────────────────╮",
         "outputColor": "#577bca"
         },
 //		{
@@ -42,19 +42,20 @@
     		{
 	"type": "host",
 	"key": "  » ",
-	"outputColor": "#577bc1"
+	"outputColor": "#85abff"
     	},
 		{
 	"type": "de",
 	"key": "  » "
 	},
     		{
-	"type": "terminal",
+	"type": "wm",
 	"key":	"  » "
 	},
     		{
 	"type": "cpu",
-	"key": "  » "
+	"key": "  » ",
+	"format": "{1} {3}"
 	},
     		{
 	"type": "memory",
@@ -70,7 +71,7 @@
 	},
 		{
 	"type": "custom",
-	"format": "└─────────────────────────────────┘"
+	"format": "╰──────────────────────────────────╯"
 	},
 		{
 	"type": "custom",
