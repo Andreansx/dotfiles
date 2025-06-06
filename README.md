@@ -11,13 +11,25 @@
 
 # 01 - main rice:
 
-<img src="./media/preview.png">
-
+![preview02](./media/preview1.png)
+![prompt preview](./media/prompt-preview1.png)
 ## Files
 *   **[kitty.conf](./kitty/kitty.conf)**
 *   **[.bashrc](./Bash/01.bashrc)**
-*   **[wallpaper](./wallpapers/IMG_3151.jpeg)**
 *   **[fastfetch](./fastfetch/config1.jsonc)**
+*   **[gnome-extensions](./gnome-extensions/)**
+*   **[font](./fonts/BlexMonoNerdFont-Regular.ttf)**
+*   **[kitty-theme](./kitty/)**
+
+# 02:
+
+<img src="./media/preview2.png">
+
+## Files
+*   **[kitty.conf](./kitty/kitty.conf)**
+*   **[.bashrc](./Bash/02.bashrc)**
+*   **[wallpaper](./wallpapers/IMG_3151.jpeg)**
+*   **[fastfetch](./fastfetch/config2.jsonc)**
 
 #
 *   Hardware:   **ThinkPad T450s**  
@@ -27,17 +39,7 @@
 *   Terminal font: **BlexMonoNF**  
 *   Cursor: **Bibata cursor Ice**
 
-# 02:
 
-![preview02](./media/preview2.png)
-![prompt preview](./media/prompt-preview2.png)
-## Files
-*   **[kitty.conf](./kitty/kitty.conf)**
-*   **[.bashrc](./Bash/02.bashrc)**
-*   **[fastfetch](./fastfetch/config2.jsonc)**
-*   **[gnome-extensions](./gnome-extensions/)**
-*   **[font](./fonts/BlexMonoNerdFont-Regular.ttf)**
-*   **[kitty-theme](./kitty/)**
 <h2>Fonts</h2>
 </div>
 

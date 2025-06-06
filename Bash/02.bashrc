@@ -36,7 +36,6 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias diff='diff --color=auto'
 alias ip='ip --color=auto'
-alias fping='ping -c 50 -i 0.2'
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -58,13 +57,6 @@ alias h='history'
 alias j='jobs -l'
 
 alias server='python -m http.server'
-
-# git aliases
-alias gitpush='git push'
-alias gp='git push'
-alias gs='git status'
-alias ga='git add . && git status'
-alias gc='git commit'
 
 mkcd() {
   mkdir -p "$1" && cd "$1"
@@ -93,19 +85,15 @@ extract() {
   fi
 }
 
-#MONOKAI_BG="39;40;34"        #272822
-MONOKAI_BG="237;242;213"	#edf2d5
+MONOKAI_BG="39;40;34"        #272822
 MONOKAI_FG="248;248;242"     #F8F8F2
 MONOKAI_COMMENT="117;113;94"  #75715E
-MONOKAI_PINK="38;172;249"     #F92672 
+MONOKAI_PINK="249;38;114"     #F92672 
 MONOKAI_GREEN="166;226;46"    #A6E22E
 MONOKAI_YELLOW="230;219;116"  #E6DB74
-MONOKAI_PURPLE="60;95;250"  #AE81FF
+MONOKAI_PURPLE="174;129;255"  #AE81FF
 MONOKAI_ORANGE="253;151;31"   #FD971F
 MONOKAI_BLUE="102;217;239"    #66D9EF
-MONOKAI_BL="64;64;55"	#404037
-MK_D="106;48;252"	#6a30fc
-RED="226;46;82"
 
 TC_FG() { echo -ne "\[\e[38;2;${1}m\]"; }
 TC_BG() { echo -ne "\[\e[48;2;${1}m\]"; }
@@ -115,11 +103,9 @@ SEPARATOR_RIGHT=""
 SEPARATOR_LEFT=""
 GIT_BRANCH_SYMBOL=""
 PATH_SEPARATOR=""
-USER_SYMBOL=" "
-#USER_SYMBOL="$"
+USER_SYMBOL=""
 HOST_SYMBOL="󰒋"
-#PROMPT_SYMBOL_USER="❯"
-PROMPT_SYMBOL_USER="❱"
+PROMPT_SYMBOL_USER="❯"
 PROMPT_SYMBOL_ROOT="#"
 ERROR_SYMBOL="✘"
 
@@ -146,67 +132,64 @@ build_prompt() {
 
   local PS1_TEXT=""
 
-  PS1_TEXT+="\n$(TC_FG ${MK_D})╭── $(TC_BG ${MK_D})$(TC_FG ${MONOKAI_BG}) ${USER_SYMBOL}${RESET_COLORS}$(TC_BG ${MONOKAI_PURPLE})$(TC_FG ${MK_D})${SEPARATOR_RIGHT}$(TC_FG ${MONOKAI_FG})$(TC_BG ${MONOKAI_PURPLE}) \u@\h "
+  PS1_TEXT+="$(TC_BG ${MONOKAI_PURPLE})$(TC_FG ${MONOKAI_BG}) ${USER_SYMBOL} \u@\h "
+
   PS1_TEXT+="$(TC_BG ${MONOKAI_PINK})$(TC_FG ${MONOKAI_PURPLE})${SEPARATOR_RIGHT}"
-  PS1_TEXT+="$(TC_FG ${MONOKAI_FG})  \w "
+  PS1_TEXT+="$(TC_FG ${MONOKAI_FG}) \w " 
 
   local git_info
   git_info=$(parse_git_branch_and_status)
   if [[ -n "$git_info" ]]; then
     local git_color_bg=${MONOKAI_GREEN}
     if [[ "$git_info" == *"*"* ]]; then
-      git_color_bg=${MONOKAI_YELLOW}
+      git_color_bg=${MONOKAI_YELLOW} 
     fi
 
     PS1_TEXT+="$(TC_BG ${git_color_bg})$(TC_FG ${MONOKAI_PINK})${SEPARATOR_RIGHT}"
-    PS1_TEXT+="$(TC_FG ${MONOKAI_BL}) ${git_info} "
-    PS1_TEXT+="$(TC_BG ${MONOKAI_BL})$(TC_FG ${git_color_bg})${RESET_COLORS}$(TC_FG ${git_color_bg})${SEPARATOR_RIGHT}"
+    PS1_TEXT+="$(TC_FG ${MONOKAI_BG}) ${git_info} "
+    PS1_TEXT+="$(TC_BG ${MONOKAI_BG})$(TC_FG ${git_color_bg})${SEPARATOR_RIGHT}"
   else
-    PS1_TEXT+="$(TC_BG ${MONOKAI_BG})$(TC_FG ${MONOKAI_PINK})${RESET_COLORS}$(TC_FG ${MONOKAI_PINK})${SEPARATOR_RIGHT}"
+
+    PS1_TEXT+="$(TC_BG ${MONOKAI_BG})$(TC_FG ${MONOKAI_PINK})${SEPARATOR_RIGHT}"
   fi
+
   PS1_TEXT+="${RESET_COLORS}"
 
-  # here is the right part of the prompt
-  # rhs fragment
-  local rhs_prompt=""
+  PS1_TEXT+="\n"
   if [ "$exit_status" -ne 0 ]; then
-    local error_string="${ERROR_SYMBOL} ${exit_status}"
-    # counting distance to print the rhs correctly
-    local error_string_len=$(printf "%s" "${error_string}" | wc -c)
-    local terminal_width=$(tput cols)
-    local start_column=$((terminal_width - error_string_len))
-
-    rhs_prompt+="\[$(tput sc)\]"
-    rhs_prompt+="\[$(tput hpa ${start_column})\]"
-    rhs_prompt+="$(TC_FG ${RED})${error_string}${RESET_COLORS}"
-    rhs_prompt+="\[$(tput rc)\]"
+    PS1_TEXT+="$(TC_FG ${MONOKAI_PINK})${ERROR_SYMBOL} ${exit_status} ${RESET_COLORS}"
   fi
 
-  # lhs fragmetn
-  local lhs_prompt_char_color=${MK_D}
-  local lhs_prompt_char="╰── ${PROMPT_SYMBOL_USER}"
+  local prompt_char_color=${MONOKAI_GREEN}
+  local prompt_char=${PROMPT_SYMBOL_USER}
+
+  if [ "$exit_status" -ne 0 ]; then
+    prompt_char_color=${MONOKAI_PINK}
+  fi
 
   if [ "$UID" -eq 0 ]; then
-    lhs_prompt_char_color=${MONOKAI_ORANGE}
-    lhs_prompt_char=${PROMPT_SYMBOL_ROOT}
+    prompt_char_color=${MONOKAI_ORANGE}
+    prompt_char=${PROMPT_SYMBOL_ROOT}
   fi
-  
-  local lhs_prompt="$(TC_FG ${lhs_prompt_char_color})${lhs_prompt_char} ${RESET_COLORS}"
 
-  PS1_TEXT+="\n${lhs_prompt}${rhs_prompt}"
+  if [ "$exit_status" -ne 0 ]; then
+    PS1_TEXT+=" "
+  fi
+
+  PS1_TEXT+="$(TC_FG ${prompt_char_color})${prompt_char} ${RESET_COLORS}"
 
   PS1="${PS1_TEXT}"
 }
 
 PROMPT_COMMAND=build_prompt
 
-#you basically dont even need this if you dont want special colors when using ls
-
 # LS_COLORS with vivid
 # here is mine LS_COLORS but you need to do this:
-# run: 'vivid generate molakai' and paste the entire output here:
+# run: 'vivid generate molokai' and paste the entire output into LS_COLORS
+# OR
+# run 'vivid generate molokai > molokai_vivid' assuming you are in your home directory
 export LS_COLORS="$molokai_vivid"
-# ^ comment this if you dont want to generate vivid colors
+# $molokai_vivid if thats the name of the file into which you piped the output of vivid
 
 if [ -d "$HOME/.local/bin" ]; then
   export PATH="$HOME/.local/bin:$PATH"
@@ -214,6 +197,4 @@ fi
 if [ -d "$HOME/.cargo/bin" ]; then
   export PATH="$HOME/.cargo/bin:$PATH"
 fi
-echo -e "\n\n"
-fastfetch
-echo -e "\n"
+
