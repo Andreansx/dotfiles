@@ -26,52 +26,54 @@
 	},
 		{
 	"type": "title",
-	"key": "          ",
+	"key": "           ",
 	"format": "{6}{7}{8}"
 	},
 		{
         "type": "custom",
-        "format": "╰──────────────────────────────────╮",
+        "format": "╰──────────────────────────────────╯",
         "outputColor": "#577bca"
         },
-//		{
-//        "type": "custom",
-//        "format": "┌──────────────────────────────────┐",
-//        "outputColor": "#577bca"
-//        },
+		{
+        "type": "custom",
+        "format": "╭──────────────────────────────────╮",
+        "outputColor": "#577bca"
+        },
     		{
 	"type": "host",
-	"key": "  » ",
+	"key": "           ",
+	"format": "{family}",
 	"outputColor": "#85abff"
     	},
 		{
 	"type": "de",
-	"key": "  » "
+	"key": "  ❱ "
 	},
     		{
 	"type": "wm",
-	"key":	"  » "
+	"key":	"  ❱ "
 	},
     		{
 	"type": "cpu",
-	"key": "  » ",
+	"key": "  ❱ ",
 	"format": "{1} {3}"
 	},
     		{
 	"type": "memory",
-	"key": "  » "
+	"key": "  ❱ "
 	},
     		{
 	"type": "battery",
-	"key": 	"  » "
+	"key": 	"  ❱ "
 	},
     		{
 	"type": "poweradapter",
-	"key": 	"  » "
+	"key": 	"  ❱ "
 	},
 		{
 	"type": "custom",
-	"format": "╰──────────────────────────────────╯"
+	"format": "╰──────────────────────────────────╯",
+	"outputColor": "#577bca"
 	},
 		{
 	"type": "custom",
