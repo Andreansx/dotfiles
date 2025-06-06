@@ -147,61 +147,66 @@ build_prompt() {
   local PS1_TEXT=""
 
   PS1_TEXT+="\n$(TC_FG ${MK_D})╭── $(TC_BG ${MK_D})$(TC_FG ${MONOKAI_BG}) ${USER_SYMBOL}${RESET_COLORS}$(TC_BG ${MONOKAI_PURPLE})$(TC_FG ${MK_D})${SEPARATOR_RIGHT}$(TC_FG ${MONOKAI_FG})$(TC_BG ${MONOKAI_PURPLE}) \u@\h "
-
   PS1_TEXT+="$(TC_BG ${MONOKAI_PINK})$(TC_FG ${MONOKAI_PURPLE})${SEPARATOR_RIGHT}"
-  PS1_TEXT+="$(TC_FG ${MONOKAI_FG})  \w " 
+  PS1_TEXT+="$(TC_FG ${MONOKAI_FG})  \w "
 
   local git_info
   git_info=$(parse_git_branch_and_status)
   if [[ -n "$git_info" ]]; then
     local git_color_bg=${MONOKAI_GREEN}
     if [[ "$git_info" == *"*"* ]]; then
-      git_color_bg=${MONOKAI_YELLOW} 
+      git_color_bg=${MONOKAI_YELLOW}
     fi
 
     PS1_TEXT+="$(TC_BG ${git_color_bg})$(TC_FG ${MONOKAI_PINK})${SEPARATOR_RIGHT}"
     PS1_TEXT+="$(TC_FG ${MONOKAI_BL}) ${git_info} "
     PS1_TEXT+="$(TC_BG ${MONOKAI_BL})$(TC_FG ${git_color_bg})${RESET_COLORS}$(TC_FG ${git_color_bg})${SEPARATOR_RIGHT}"
   else
-
     PS1_TEXT+="$(TC_BG ${MONOKAI_BG})$(TC_FG ${MONOKAI_PINK})${RESET_COLORS}$(TC_FG ${MONOKAI_PINK})${SEPARATOR_RIGHT}"
   fi
-
   PS1_TEXT+="${RESET_COLORS}"
 
-  PS1_TEXT+="\n"
+  # here is the right part of the prompt
+  # rhs fragment
+  local rhs_prompt=""
   if [ "$exit_status" -ne 0 ]; then
-    PS1_TEXT+="$(TC_FG ${RED})${ERROR_SYMBOL} ${exit_status} ${RESET_COLORS}"
+    local error_string="${ERROR_SYMBOL} ${exit_status}"
+    # counting distance to print the rhs correctly
+    local error_string_len=$(printf "%s" "${error_string}" | wc -c)
+    local terminal_width=$(tput cols)
+    local start_column=$((terminal_width - error_string_len))
+
+    rhs_prompt+="\[$(tput sc)\]"
+    rhs_prompt+="\[$(tput hpa ${start_column})\]"
+    rhs_prompt+="$(TC_FG ${RED})${error_string}${RESET_COLORS}"
+    rhs_prompt+="\[$(tput rc)\]"
   fi
 
-  local prompt_char_color=${MK_D}
-  local prompt_char="╰── ${PROMPT_SYMBOL_USER}"
-
-  if [ "$exit_status" -ne 0 ]; then
-    prompt_char_color=${MONOKAI_PINK}
-  fi
+  # lhs fragmetn
+  local lhs_prompt_char_color=${MK_D}
+  local lhs_prompt_char="╰── ${PROMPT_SYMBOL_USER}"
 
   if [ "$UID" -eq 0 ]; then
-    prompt_char_color=${MONOKAI_ORANGE}
-    prompt_char=${PROMPT_SYMBOL_ROOT}
+    lhs_prompt_char_color=${MONOKAI_ORANGE}
+    lhs_prompt_char=${PROMPT_SYMBOL_ROOT}
   fi
+  
+  local lhs_prompt="$(TC_FG ${lhs_prompt_char_color})${lhs_prompt_char} ${RESET_COLORS}"
 
-  if [ "$exit_status" -ne 0 ]; then
-    PS1_TEXT+=" "
-  fi
-
-  PS1_TEXT+="$(TC_FG ${prompt_char_color})${prompt_char} ${RESET_COLORS}"
+  PS1_TEXT+="\n${lhs_prompt}${rhs_prompt}"
 
   PS1="${PS1_TEXT}"
 }
 
 PROMPT_COMMAND=build_prompt
 
-# S_COLORS with vivid
+#you basically dont even need this if you dont want special colors when using ls
+
+# LS_COLORS with vivid
 # here is mine LS_COLORS but you need to do this:
 # run: 'vivid generate molakai' and paste the entire output here:
 export LS_COLORS="$molokai_vivid"
-
+# ^ comment this if you dont want to generate vivid colors
 
 if [ -d "$HOME/.local/bin" ]; then
   export PATH="$HOME/.local/bin:$PATH"
