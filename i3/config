@@ -193,7 +193,10 @@ exec_always --no-startup-id feh --bg-scale /home/yeendrea/Pictures/wallpaper2.PN
 exec_always --no-startup-id picom
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 bindsym $mod+Shift+x exec i3lock
-
+#for screenshots with maim
+bindsym Print exec --no-startup-id ~/.config/i3/screenshot.sh
+bindsym $mod+Print exec --no-startup-id ~/.config/i3/screenshot.sh select_clipboard
+bindsym $mod+Shift+Print exec --no-startup-id ~/.config/i3/screenshot.sh select_file
 gaps inner 10
 gaps outer 3
 
