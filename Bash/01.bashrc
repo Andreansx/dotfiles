@@ -93,35 +93,35 @@ extract() {
   fi
 }
 
-#MONOKAI_BG="39;40;34"        #272822
-MONOKAI_BG="237;242;213"	#edf2d5
-MONOKAI_FG="248;248;242"     #F8F8F2
-MONOKAI_COMMENT="117;113;94"  #75715E
-MONOKAI_PINK="38;172;249"     #F92672 
-MONOKAI_GREEN="166;226;46"    #A6E22E
-MONOKAI_YELLOW="230;219;116"  #E6DB74
-MONOKAI_PURPLE="60;95;250"  #AE81FF
-MONOKAI_ORANGE="253;151;31"   #FD971F
-MONOKAI_BLUE="102;217;239"    #66D9EF
-MONOKAI_BL="64;64;55"	#404037
+#M_BG="39;40;34"        #272822
+M_BG="237;242;213"	#edf2d5
+M_FG="248;248;242"     #F8F8F2
+M_COMMENT="117;113;94"  #75715E
+M_PINK="38;172;249"     #F92672 
+M_GREEN="166;226;46"    #A6E22E
+M_YELLOW="230;219;116"  #E6DB74
+M_PURP="60;95;250"  #AE81FF
+M_ORANGE="253;151;31"   #FD971F
+M_BLUE="102;217;239"    #66D9EF
+M_BL="64;64;55"	#404037
 MK_D="106;48;252"	#6a30fc
 RED="226;46;82"
 
 TC_FG() { echo -ne "\[\e[38;2;${1}m\]"; }
 TC_BG() { echo -ne "\[\e[48;2;${1}m\]"; }
-RESET_COLORS="\[\e[0m\]"
+RS_COL="\[\e[0m\]"
 
-SEPARATOR_RIGHT=""
-SEPARATOR_LEFT=""
+SEP_R=""
+SEP_L=""
 GIT_BRANCH_SYMBOL=""
 PATH_SEPARATOR=""
-USER_SYMBOL=" "
-#USER_SYMBOL="$"
+USR=" "
+#USR="$"
 HOST_SYMBOL="󰒋"
-#PROMPT_SYMBOL_USER="❯"
-PROMPT_SYMBOL_USER="❱"
+#USR_PROMPT_SYM="❯"
+USR_PROMPT_SYM="❱"
 PROMPT_SYMBOL_ROOT="#"
-ERROR_SYMBOL="✘"
+ERR="✘"
 
 parse_git_branch_and_status() {
   local branch_name dirty_status
@@ -146,31 +146,31 @@ build_prompt() {
 
   local PS1_TEXT=""
 
-  PS1_TEXT+="\n$(TC_FG ${MK_D})╭── $(TC_BG ${MK_D})$(TC_FG ${MONOKAI_BG}) ${USER_SYMBOL}${RESET_COLORS}$(TC_BG ${MONOKAI_PURPLE})$(TC_FG ${MK_D})${SEPARATOR_RIGHT}$(TC_FG ${MONOKAI_FG})$(TC_BG ${MONOKAI_PURPLE}) \u@\h "
-  PS1_TEXT+="$(TC_BG ${MONOKAI_PINK})$(TC_FG ${MONOKAI_PURPLE})${SEPARATOR_RIGHT}"
-  PS1_TEXT+="$(TC_FG ${MONOKAI_FG})  \w "
+  PS1_TEXT+="\n$(TC_FG ${MK_D})╭── $(TC_BG ${MK_D})$(TC_FG ${M_BG}) ${USR}${RS_COL}$(TC_BG ${M_PURP})$(TC_FG ${MK_D})${SEP_R}$(TC_FG ${M_FG})$(TC_BG ${M_PURP}) \u@\h "
+  PS1_TEXT+="$(TC_BG ${M_PINK})$(TC_FG ${M_PURP})${SEP_R}"
+  PS1_TEXT+="$(TC_FG ${M_FG})  \w "
 
   local git_info
   git_info=$(parse_git_branch_and_status)
   if [[ -n "$git_info" ]]; then
-    local git_color_bg=${MONOKAI_GREEN}
+    local git_color_bg=${M_GREEN}
     if [[ "$git_info" == *"*"* ]]; then
-      git_color_bg=${MONOKAI_YELLOW}
+      git_color_bg=${M_YELLOW}
     fi
 
-    PS1_TEXT+="$(TC_BG ${git_color_bg})$(TC_FG ${MONOKAI_PINK})${SEPARATOR_RIGHT}"
-    PS1_TEXT+="$(TC_FG ${MONOKAI_BL}) ${git_info} "
-    PS1_TEXT+="$(TC_BG ${MONOKAI_BL})$(TC_FG ${git_color_bg})${RESET_COLORS}$(TC_FG ${git_color_bg})${SEPARATOR_RIGHT}"
+    PS1_TEXT+="$(TC_BG ${git_color_bg})$(TC_FG ${M_PINK})${SEP_R}"
+    PS1_TEXT+="$(TC_FG ${M_BL}) ${git_info} "
+    PS1_TEXT+="$(TC_BG ${M_BL})$(TC_FG ${git_color_bg})${RS_COL}$(TC_FG ${git_color_bg})${SEP_R}"
   else
-    PS1_TEXT+="$(TC_BG ${MONOKAI_BG})$(TC_FG ${MONOKAI_PINK})${RESET_COLORS}$(TC_FG ${MONOKAI_PINK})${SEPARATOR_RIGHT}"
+    PS1_TEXT+="$(TC_BG ${M_BG})$(TC_FG ${M_PINK})${RS_COL}$(TC_FG ${M_PINK})${SEP_R}"
   fi
-  PS1_TEXT+="${RESET_COLORS}"
+  PS1_TEXT+="${RS_COL}"
 
   # here is the right part of the prompt
   # rhs fragment
   local rhs_prompt=""
   if [ "$exit_status" -ne 0 ]; then
-    local error_string="${ERROR_SYMBOL} ${exit_status}"
+    local error_string="${ERR} ${exit_status}"
     # counting distance to print the rhs correctly
     local error_string_len=$(printf "%s" "${error_string}" | wc -c)
     local terminal_width=$(tput cols)
@@ -178,20 +178,20 @@ build_prompt() {
 
     rhs_prompt+="\[$(tput sc)\]"
     rhs_prompt+="\[$(tput hpa ${start_column})\]"
-    rhs_prompt+="$(TC_FG ${RED})${error_string}${RESET_COLORS}"
+    rhs_prompt+="$(TC_FG ${RED})${error_string}${RS_COL}"
     rhs_prompt+="\[$(tput rc)\]"
   fi
 
   # lhs fragmetn
   local lhs_prompt_char_color=${MK_D}
-  local lhs_prompt_char="╰── ${PROMPT_SYMBOL_USER}"
+  local lhs_prompt_char="╰── ${USR_PROMPT_SYM}"
 
   if [ "$UID" -eq 0 ]; then
-    lhs_prompt_char_color=${MONOKAI_ORANGE}
+    lhs_prompt_char_color=${M_ORANGE}
     lhs_prompt_char=${PROMPT_SYMBOL_ROOT}
   fi
   
-  local lhs_prompt="$(TC_FG ${lhs_prompt_char_color})${lhs_prompt_char} ${RESET_COLORS}"
+  local lhs_prompt="$(TC_FG ${lhs_prompt_char_color})${lhs_prompt_char} ${RS_COL}"
 
   PS1_TEXT+="\n${lhs_prompt}${rhs_prompt}"
 
