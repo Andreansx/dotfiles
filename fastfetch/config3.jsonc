@@ -1,0 +1,121 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "display": {
+    "color": {
+      "keys": "#8b6f5c",
+      "title": "#e8ddd4"
+    },
+    "separator": " "
+  },
+  "logo": {
+    "source": "arch_small",
+    "padding": {
+      "top": 2,
+      "left": 4
+    },
+    "color": {
+      "1": "#c94545",
+      "2": "#b8967a"
+    }
+  },
+  "modules": [
+    {
+      "type": "custom",
+      "format": "╭─────────────────────────────────────╮",
+      "outputColor": "#8b6f5c"
+    },
+    {
+      "type": "title",
+      "key": "   󰌽    ",
+      "format": "{6}{7}{8}",
+      "outputColor": "#e8ddd4"
+    },
+    {
+      "type": "custom",
+      "format": "├─────────────────────────────────────┤",
+      "outputColor": "#8b6f5c"
+    },
+    {
+      "type": "os",
+      "key": "   󰣇    ",
+      "outputColor": "#d4c4b0"
+    },
+    {
+      "type": "custom",
+      "format": "├─────────────────────────────────────┤",
+      "outputColor": "#8b6f5c"
+    },
+    {
+      "type": "host",
+      "key": "   󰌢    ",
+      "format": "{family}",
+      "outputColor": "#a89080"
+    },
+    {
+      "type": "cpu",
+      "key": "       ",
+      "format": "{1}",
+      "outputColor": "#a89080"
+    },
+    {
+      "type": "memory",
+      "key": "       ",
+      "outputColor": "#a89080"
+    },
+    {
+      "type": "custom",
+      "format": "├─────────────────────────────────────┤",
+      "outputColor": "#8b6f5c"
+    },
+    {
+      "type": "wm",
+      "key": "       ",
+      "outputColor": "#b8967a"
+    },
+    {
+      "type": "wmtheme",
+      "key": "       ",
+      "outputColor": "#b8967a"
+    },
+    {
+      "type": "terminal",
+      "key": "       ",
+      "outputColor": "#b8967a"
+    },
+    {
+      "type": "custom",
+      "format": "├─────────────────────────────────────┤",
+      "outputColor": "#8b6f5c"
+    },
+    {
+      "type": "battery",
+      "key": "   󰁹    ",
+      "outputColor": "#c94545"
+    },
+    {
+      "type": "poweradapter",
+      "key": "       ",
+      "outputColor": "#c94545"
+    },
+    {
+      "type": "localip",
+      "key": "       ",
+      "outputColor": "#c94545"
+    },
+    {
+      "type": "custom",
+      "format": "╰─────────────────────────────────────╯",
+      "outputColor": "#8b6f5c"
+    },
+    {
+      "type": "custom",
+      "format": "",
+      "outputColor": "#8b6f5c"
+    },
+    {
+      "type": "colors",
+      "symbol": "circle",
+      "paddingLeft": 12
+    }
+  ]
+}
