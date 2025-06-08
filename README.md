@@ -1,6 +1,7 @@
 <div align="center">
 <h1>My dotfiles</h1>
   <img alt="Static Badge" src="https://img.shields.io/badge/arch-%231793D1?style=for-the-badge&logo=archlinux&logoColor=white&logoSize=auto">
+<img alt="Static Badge" src="https://img.shields.io/badge/i3wm-%2352C0FF?style=for-the-badge&logo=i3&logoColor=white&logoSize=auto">
 <img alt="Static Badge" src="https://img.shields.io/badge/gnome-%234A86CF?style=for-the-badge&logo=gnome&logoColor=white&logoSize=auto">
 <h4>In this repository you will find my configuration files for terminal emulators, window managers, code editors, color themes etc.</br> Everything is done on Arch Linux</h4>
 
