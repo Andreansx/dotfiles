@@ -7,6 +7,13 @@
 
 </div>
 
+>[!NOTE]
+>WIP - don't have a screenshot right now
+
+## Main rice - i3wm
+
+
+
 >[!IMPORTANT]
 >I will try to make the repository as organised as I can but the themes and styles need to be installed manually. Maybe in some time I will make a script for installation
 
