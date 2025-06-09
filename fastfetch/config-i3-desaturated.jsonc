@@ -2,8 +2,8 @@
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "display": {
     "color": {
-      "keys": "#8b6f5c",
-      "title": "#e8ddd4"
+      "keys": "#c8956d",
+      "title": "#f2e6dc"
     },
     "separator": " "
   },
@@ -14,103 +14,104 @@
       "left": 4
     },
     "color": {
-      "1": "#c94545",
-      "2": "#b8967a"
+      "1": "#e85a8a",
+      // "2": "#d4a574"
+      "2": "#ED4078"
     }
   },
   "modules": [
     {
       "type": "custom",
       "format": "╭─────────────────────────────────────╮",
-      "outputColor": "#8b6f5c"
+      "outputColor": "#c8956d"
     },
     {
       "type": "title",
       "key": "   󰌽    ",
       "format": "{6}{7}{8}",
-      "outputColor": "#e8ddd4"
+      "outputColor": "#f2e6dc"
     },
     {
       "type": "custom",
       "format": "├─────────────────────────────────────┤",
-      "outputColor": "#8b6f5c"
+      "outputColor": "#c8956d"
     },
     {
       "type": "os",
       "key": "   󰣇    ",
-      "outputColor": "#d4c4b0"
+      "outputColor": "#e8c4a8"
     },
     {
       "type": "custom",
       "format": "├─────────────────────────────────────┤",
-      "outputColor": "#8b6f5c"
+      "outputColor": "#c8956d"
     },
     {
       "type": "host",
       "key": "   󰌢    ",
       "format": "{family}",
-      "outputColor": "#a89080"
+      "outputColor": "#b8a08c"
     },
     {
       "type": "cpu",
       "key": "       ",
       "format": "{1}",
-      "outputColor": "#a89080"
+      "outputColor": "#b8a08c"
     },
     {
       "type": "memory",
       "key": "       ",
-      "outputColor": "#a89080"
+      "outputColor": "#b8a08c"
     },
     {
       "type": "custom",
       "format": "├─────────────────────────────────────┤",
-      "outputColor": "#8b6f5c"
+      "outputColor": "#c8956d"
     },
     {
       "type": "wm",
       "key": "       ",
-      "outputColor": "#b8967a"
+      "outputColor": "#d4a574"
     },
     {
       "type": "wmtheme",
       "key": "       ",
-      "outputColor": "#b8967a"
+      "outputColor": "#d4a574"
     },
     {
       "type": "terminal",
       "key": "       ",
-      "outputColor": "#b8967a"
+      "outputColor": "#d4a574"
     },
     {
       "type": "custom",
       "format": "├─────────────────────────────────────┤",
-      "outputColor": "#8b6f5c"
+      "outputColor": "#c8956d"
     },
     {
       "type": "battery",
       "key": "   󰁹    ",
-      "outputColor": "#c94545"
+      "outputColor": "#e85a8a"
     },
     {
       "type": "poweradapter",
       "key": "       ",
-      "outputColor": "#c94545"
+      "outputColor": "#e85a8a"
     },
     {
       "type": "localip",
       "key": "       ",
-      "outputColor": "#c94545"
+      "outputColor": "#e85a8a"
     },
     {
       "type": "custom",
       "format": "╰─────────────────────────────────────╯",
-      "outputColor": "#8b6f5c"
+      "outputColor": "#c8956d"
     },
     {
       "type": "custom",
       "format": "",
-      "outputColor": "#8b6f5c"
+      "outputColor": "#c8956d"
     },
     {
       "type": "colors",
