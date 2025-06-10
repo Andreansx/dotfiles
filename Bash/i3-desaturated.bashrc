@@ -1,8 +1,4 @@
 # ~/.bashrc
-# You need to use vivid if you want to have better colors
-# run: pacman -S vivid
-# look at line 187
-
 
 case $- in
     *i*) ;;
@@ -107,12 +103,14 @@ M_BL="64;64;55"	#404037
 MK_D="232;90;138"
 RED="226;46;82"
 
-TC_FG() { echo -ne "\[\e[38;2;${1}m\]"; }
-TC_BG() { echo -ne "\[\e[48;2;${1}m\]"; }
-RS_COL="\[\e[0m\]"
+TC_FG() { printf '\[\e[38;2;%sm\]' "$1"; }
+TC_BG() { printf '\[\e[48;2;%sm\]' "$1"; }
+RS_COL='\[\e[0m\]'
 
-SEP_R=""
-SEP_L=""
+
+
+#SEP_R=""
+#SEP_L=""
 GIT_BRANCH_SYMBOL=""
 PATH_SEPARATOR=""
 USR=" "
@@ -122,6 +120,11 @@ HOST_SYMBOL="󰒋"
 USR_PROMPT_SYM="❱"
 PROMPT_SYMBOL_ROOT="#"
 ERR="✘"
+
+
+SEP_L=""
+SEP_R=""
+
 
 parse_git_branch_and_status() {
   local branch_name dirty_status
@@ -144,11 +147,11 @@ parse_git_branch_and_status() {
 build_prompt() {
   local exit_status="$?"
 
-  local PS1_TEXT=""
+  PS1=""
 
-  PS1_TEXT+="\n$(TC_FG ${MK_D})╭── $(TC_BG ${MK_D})$(TC_FG ${M_BG}) ${USR}${RS_COL}$(TC_BG ${M_PURP})$(TC_FG ${MK_D})${SEP_R}$(TC_FG ${M_FG})$(TC_BG ${M_PURP}) \u@\h "
-  PS1_TEXT+="$(TC_BG ${M_PINK})$(TC_FG ${M_PURP})${SEP_R}"
-  PS1_TEXT+="$(TC_FG ${M_FG})  \w "
+  PS1+="\n$(TC_FG ${MK_D})╭── $(TC_BG ${MK_D})$(TC_FG ${M_BG}) ${USR}${RS_COL}$(TC_BG ${M_PURP})$(TC_FG ${MK_D})${SEP_R}$(TC_FG ${M_FG})$(TC_BG ${M_PURP}) \u@\h "
+  PS1+="$(TC_BG ${M_PINK})$(TC_FG ${M_PURP})${SEP_R}"
+  PS1+="$(TC_FG ${M_FG})  \w "
 
   local git_info
   git_info=$(parse_git_branch_and_status)
@@ -158,31 +161,18 @@ build_prompt() {
       git_color_bg=${M_YELLOW}
     fi
 
-    PS1_TEXT+="$(TC_BG ${git_color_bg})$(TC_FG ${M_PINK})${SEP_R}"
-    PS1_TEXT+="$(TC_FG ${M_BL}) ${git_info} "
-    PS1_TEXT+="$(TC_BG ${M_BL})$(TC_FG ${git_color_bg})${RS_COL}$(TC_FG ${git_color_bg})${SEP_R}"
+    PS1+="$(TC_BG ${git_color_bg})$(TC_FG ${M_PINK})${SEP_R}"
+    PS1+="$(TC_FG ${M_BL}) ${git_info} "
+    PS1+="$(TC_BG ${M_BL})$(TC_FG ${git_color_bg})${RS_COL}$(TC_FG ${git_color_bg})${SEP_R}"
   else
-    PS1_TEXT+="$(TC_BG ${M_BG})$(TC_FG ${M_PINK})${RS_COL}$(TC_FG ${M_PINK})${SEP_R}"
+    PS1+="$(TC_BG ${M_BG})$(TC_FG ${M_PINK})${RS_COL}$(TC_FG ${M_PINK})${SEP_R}"
   fi
-  PS1_TEXT+="${RS_COL}"
+  PS1+="${RS_COL}"
 
-  # here is the right part of the prompt
-  # rhs fragment
-  local rhs_prompt=""
   if [ "$exit_status" -ne 0 ]; then
-    local error_string="${ERR} ${exit_status}"
-    # counting distance to print the rhs correctly
-    local error_string_len=$(printf "%s" "${error_string}" | wc -c)
-    local terminal_width=$(tput cols)
-    local start_column=$((terminal_width - error_string_len))
-
-    rhs_prompt+="\[$(tput sc)\]"
-    rhs_prompt+="\[$(tput hpa ${start_column})\]"
-    rhs_prompt+="$(TC_FG ${RED})${error_string}${RS_COL}"
-    rhs_prompt+="\[$(tput rc)\]"
+    PS1+=" $(TC_FG ${RED})${ERR} ${exit_status}${RS_COL}"
   fi
 
-  # lhs fragmetn
   local lhs_prompt_char_color=${MK_D}
   local lhs_prompt_char="╰── ${USR_PROMPT_SYM}"
 
@@ -191,12 +181,9 @@ build_prompt() {
     lhs_prompt_char=${PROMPT_SYMBOL_ROOT}
   fi
   
-  local lhs_prompt="$(TC_FG ${lhs_prompt_char_color})${lhs_prompt_char} ${RS_COL}"
-
-  PS1_TEXT+="\n${lhs_prompt}${rhs_prompt}"
-
-  PS1="${PS1_TEXT}"
+  PS1+="\n$(TC_FG ${lhs_prompt_char_color})${lhs_prompt_char} ${RS_COL}"
 }
+
 
 PROMPT_COMMAND=build_prompt
 
