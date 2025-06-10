@@ -200,14 +200,6 @@ build_prompt() {
 
 PROMPT_COMMAND=build_prompt
 
-#you basically dont even need this if you dont want special colors when using ls
-
-# LS_COLORS with vivid
-# here is mine LS_COLORS but you need to do this:
-# run: 'vivid generate molakai' and paste the entire output here:
-export LS_COLORS="$molokai_vivid"
-# ^ comment this if you dont want to generate vivid colors
-
 if [ -d "$HOME/.local/bin" ]; then
   export PATH="$HOME/.local/bin:$PATH"
 fi
