@@ -12,7 +12,11 @@
 
 ## Main rice - i3wm
 
+What's very important is the build of picom. This is the one that works on my machine
 
+```bash
+yay -S picom-simpleanims-next-git
+```
 
 >[!IMPORTANT]
 >I will try to make the repository as organised as I can but the themes and styles need to be installed manually. Maybe in some time I will make a script for installation
