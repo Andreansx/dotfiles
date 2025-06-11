@@ -12,6 +12,11 @@
 
 ## Main rice - i3wm
 
+**[picom.conf](./picom/picom-i3-desaturated.conf)**  
+**[kitty.conf](./kitty/kitty-i3-desaturated.conf)**  
+**[i3](./i3/config)**  
+**[polybar](./polybar/config-i3-desaturated.ini)**  
+**[.zshrc](./zsh/.zshrc) and [.p10k.zsh](./zsh/.p10k.zsh)**  
 
 
 >[!IMPORTANT]
