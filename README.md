@@ -18,9 +18,13 @@
 **[polybar](./polybar/config-i3-desaturated.ini)**  
 **[.zshrc](./zsh/.zshrc) and [.p10k.zsh](./zsh/.p10k.zsh)**  
 
+```zsh
+yay -S picom-simpleanims-next-git
+```
+
 ## Tools
 * **WM:** i3wm
-* **Compositor:** Picom-simpleanims v12
+* **Compositor:** picom-simpleanims-next-git
 * **Shell:** Zsh
 
 
