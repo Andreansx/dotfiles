@@ -18,8 +18,8 @@
 
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     archicon
-    dir_joined
-    vcs_joined
+    dir
+    vcs
     newline
     prompt_char
   )
@@ -84,7 +84,7 @@
   typeset -g POWERLEVEL9K_PROMPT_CHAR_LEFT_{LEFT,RIGHT}_WHITESPACE=
 
   ##################################[ dir: current directory ]##################################
-  typeset -g POWERLEVEL9K_DIR_BACKGROUND='#4a3832'
+  typeset -g POWERLEVEL9K_DIR_BACKGROUND='#625149'
   typeset -g POWERLEVEL9K_DIR_FOREGROUND='#f2e6dc'
   typeset -g POWERLEVEL9K_DIR_ICON_FOREGROUND='#f2e6dc'
   typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_unique
@@ -103,11 +103,11 @@
   typeset -g POWERLEVEL9K_DIR_SHOW_WRITABLE=v3
 
   #####################################[ vcs: git status ]######################################
-  typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND='#4a3832'
-  typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='#4a3832'
-  typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='#4a3832'
-  typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND='#4a3832'
-  typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND='#4a3832'
+  typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND='#625149'
+  typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='#625149'
+  typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='#625149'
+  typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND='#625149'
+  typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND='#625149'
 
   typeset -g POWERLEVEL9K_VCS_BRANCH_ICON=''
   typeset -g POWERLEVEL9K_VCS_UNTRACKED_ICON='?'
