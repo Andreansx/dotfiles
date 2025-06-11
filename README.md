@@ -18,6 +18,12 @@
 **[polybar](./polybar/config-i3-desaturated.ini)**  
 **[.zshrc](./zsh/.zshrc) and [.p10k.zsh](./zsh/.p10k.zsh)**  
 
+## Tools
+* **WM:** i3wm
+* **Compositor:** Picom-simpleanims v12
+* **Shell:** Zsh
+
+
 
 >[!IMPORTANT]
 >I will try to make the repository as organised as I can but the themes and styles need to be installed manually. Maybe in some time I will make a script for installation
