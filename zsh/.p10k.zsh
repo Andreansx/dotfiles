@@ -17,9 +17,10 @@
   [[ $ZSH_VERSION == (5.<1->*|<6->.*) ]] || return
 
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
-    archicon
+    context
+    archicon_joined
     dir
-    vcs
+    vcs_joined
     newline
     prompt_char
   )
@@ -33,7 +34,6 @@
     #virtualenv
     #anaconda
     # pyenv
-    context_joined
     time_joined
     newline
   )
@@ -194,8 +194,8 @@ typeset -g POWERLEVEL9K_TIME_UPDATE_ON_COMMAND=false
 
 
 ##################################[ context: user@hostname ]##################################
-typeset -g POWERLEVEL9K_CONTEXT_BACKGROUND='#b8a08c'
-typeset -g POWERLEVEL9K_CONTEXT_FOREGROUND='#1f1b18'
+typeset -g POWERLEVEL9K_CONTEXT_BACKGROUND='#4a3832'
+typeset -g POWERLEVEL9K_CONTEXT_FOREGROUND='#e8c4a8'
 
 typeset -g POWERLEVEL9K_CONTEXT_ROOT_BACKGROUND='#b8a08c'
 typeset -g POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND='#1f1b18'
