@@ -8,15 +8,13 @@
     "separator": " "
   },
   "logo": {
-    "source": "arch_small",
+    "type": "kitty",
+    "source": "~/Downloads/archicon2.png",
+    "height": 10,
     "padding": {
       "top": 2,
-      "left": 4
-    },
-    "color": {
-      "1": "#e85a8a",
-      // "2": "#d4a574"
-      "2": "#ED4078"
+      "right": 5,
+      "left": 5
     }
   },
   "modules": [
@@ -40,6 +38,11 @@
       "type": "os",
       "key": "   󰣇    ",
       "outputColor": "#e85a8a"
+    },
+    {
+      "type": "kernel",
+      "key": "        ",
+      "outputColor": "#b8a08c"
     },
     {
       "type": "custom",
@@ -100,11 +103,6 @@
     },
     {
       "type": "poweradapter",
-      "key": "       ",
-      "outputColor": "#e85a8a"
-    },
-    {
-      "type": "localip",
       "key": "       ",
       "outputColor": "#e85a8a"
     },

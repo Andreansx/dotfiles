@@ -189,6 +189,7 @@ bindsym $mod+r mode "resize"
 #        status_command i3status
 #}
 
+
 exec_always --no-startup-id feh --bg-scale /home/yeendrea/Pictures/wallpaper2.PNG
 exec_always --no-startup-id picom --backend glx
 exec_always --no-startup-id ~/.config/polybar/launch.sh
@@ -202,11 +203,15 @@ bindsym Control+Print exec --no-startup-id  maim  --delay 3 ~/Pictures/Screensho
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 5%+
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
+bindsym $mod+t exec ayugram-desktop
+
 
 gaps inner 15
-gaps outer 20
+gaps outer 30
 gaps top 45
 #smart_gaps on
 
 #default_border pixel 5
 default_border none
+
+for_window [class="AyuGramDesktop" window_type="dialog"] border none
