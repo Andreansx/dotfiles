@@ -5,9 +5,13 @@
 #  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 #fi
 
+# Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+
+# Set name of the theme to load
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
+# Plugins
 plugins=(
   git
   zsh-autosuggestions
@@ -29,6 +33,9 @@ alias egrep='egrep --color=auto'
 alias diff='diff --color=auto'
 alias ip='ip --color=auto'
 alias fping='ping -c 50 -i 0.2'
+alias sysctlr='systemctl reboot'
+
+alias -g -- -sybau='-Syu'
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -82,6 +89,7 @@ extract() {
   fi
 }
 
+# === PATH Configuration ===
 if [ -d "$HOME/.local/bin" ]; then
   export PATH="$HOME/.local/bin:$PATH"
 fi
@@ -89,6 +97,7 @@ if [ -d "$HOME/.cargo/bin" ]; then
   export PATH="$HOME/.cargo/bin:$PATH"
 fi
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 echo -e "\n\n\n\n\n\n\n\n"
