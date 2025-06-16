@@ -50,7 +50,7 @@ tiling_drag modifier titlebar
 
 # start a terminal
 bindsym $mod+Return exec kitty
-
+#bindsym Shift+Return exec kitty
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -213,5 +213,7 @@ gaps top 45
 
 #default_border pixel 5
 default_border none
+
+for_window [class="Codium" window_type="dialog"] border none
 
 for_window [class="AyuGramDesktop" window_type="dialog"] border none

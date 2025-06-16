@@ -29,6 +29,11 @@ What's very important is the build of picom. This is the one that works on my ma
 yay -S picom-simpleanims-next-git
 ```
 
+I love this particular font from Adobe called **Source Han Sans JP** since it supports Japanese characters, which is useful for pretty ricing.  You can install it from the **AUR**
+```bash
+yay -S adobe-source-han-sans-jp-fonts
+```
+
 >[!IMPORTANT]
 >I will try to make the repository as organised as I can but the themes and styles need to be installed manually. Maybe in some time I will make a script for installation
 
@@ -120,3 +125,4 @@ Copy-Item "./dotfiles/PowerShell/<NAME_OF_FILE_HERE>.omp.json" -Destination (Joi
 ```powershell
 . $PROFILE
 ```
+
