@@ -26,12 +26,16 @@
 What's very important is the build of picom. This is the one that works on my machine
 
 ```bash
-yay -S picom-simpleanims-next-git
+yay -S picom-ftlabs-git
 ```
 
-I love this particular font from Adobe called **Source Han Sans JP** since it supports Japanese characters, which is useful for pretty ricing.  You can install it from the **AUR**
+I love this particular font from Adobe called **Source Han Sans JP** since it supports Japanese characters, which is useful in my case for making the rice prettier.  You can install it from the **AUR**
 ```bash
 yay -S adobe-source-han-sans-jp-fonts
+```
+You can also use **MesloLGL Nerd Font**. 
+```zsh
+sudo pacman -S ttf-meslo-nerd
 ```
 
 >[!IMPORTANT]
