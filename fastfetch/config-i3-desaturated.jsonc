@@ -44,7 +44,7 @@
     {
       "type": "os",
       "key": "   󰣇    ",
-      "outputColor": "#e85a8a"
+      "outputColor": "#ef3075"
     },
     {
       "type": "kernel",
@@ -106,12 +106,12 @@
     {
       "type": "battery",
       "key": "   󰁹    ",
-      "outputColor": "#e85a8a"
+      "outputColor": "#ef3075"
     },
     {
       "type": "poweradapter",
       "key": "       ",
-      "outputColor": "#e85a8a"
+      "outputColor": "#ef3075"
     },
     {
       "type": "custom",
