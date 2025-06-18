@@ -11,6 +11,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # Set name of the theme to load
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
+
+
 # Plugins
 plugins=(
   git
@@ -90,6 +92,17 @@ extract() {
   fi
 }
 
+ssh-ccr() {
+
+  echo -ne "\033]0;MikroTik CCR2004\007"
+
+  echo -e "\n\e[1;35mConnecting to MikroTik CCR2004...\e[0m\n"
+
+  ssh admin@192.168.88.1
+  echo -ne "\033]0;${USER}@${HOST}\007"
+}
+
+
 # === PATH Configuration ===
 if [ -d "$HOME/.local/bin" ]; then
   export PATH="$HOME/.local/bin:$PATH"
@@ -104,3 +117,4 @@ fi
 echo -e "\n\n\n\n\n\n\n\n"
 fastfetch
 echo -e "\n"
+
