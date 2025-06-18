@@ -211,7 +211,7 @@ gaps outer 30
 gaps top 45
 #smart_gaps on
 
-#default_border pixel 5
+#default_border pixel 20
 default_border none
 
 for_window [class="Codium" window_type="dialog"] border none

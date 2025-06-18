@@ -16,12 +16,14 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Plugins
 plugins=(
   git
-  zsh-autosuggestions
-  zsh-syntax-highlighting
   extract
   sudo
   colored-man-pages
+  zsh-autosuggestions
+  zsh-syntax-highlighting
 )
+
+#export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#5e473f,dim'
 
 source $ZSH/oh-my-zsh.sh
 
