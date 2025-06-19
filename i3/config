@@ -50,6 +50,8 @@ tiling_drag modifier titlebar
 
 # start a terminal
 bindsym $mod+Return exec kitty --title '乙丂ん'
+#bindsym $mod+Return exec --no-startup-id ~/.config/i3/scripts/auto-split.sh kitty --title '乙丂ん'
+
 #bindsym Shift+Return exec kitty
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -190,8 +192,8 @@ bindsym $mod+r mode "resize"
 #}
 
 
-exec_always --no-startup-id feh --bg-scale /home/yeendrea/Pictures/wallpaper2.PNG
-exec_always --no-startup-id picom --animations -b
+exec_always --no-startup-id feh --bg-scale /home/yeendrea/Pictures/wallpaper6.PNG
+exec_always --no-startup-id picom --backend glx --animations -b
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 bindsym $mod+Shift+x exec --no-startup-id i3lock
 #for screenshots with maim
@@ -205,6 +207,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
 bindsym $mod+t exec ayugram-desktop
 
+bindsym $mod+c exec firefox
 
 gaps inner 15
 gaps outer 30

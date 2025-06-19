@@ -38,6 +38,7 @@ alias diff='diff --color=auto'
 alias ip='ip --color=auto'
 alias fping='ping -c 50 -i 0.2'
 alias sysctlr='systemctl reboot'
+alias pwof='systemctl poweroff'
 
 alias -g -- -sybau='-Syu'
 
@@ -97,10 +98,8 @@ extract() {
 ssh-ccr() {
 
   echo -ne "\033]0;MikroTik CCR2004\007"
-
   echo -e "\n\e[1;35mConnecting to MikroTik CCR2004...\e[0m\n"
-
-  ssh admin@192.168.88.1
+  ssh admin@10.10.0.1
   echo -ne "\033]0;${USER}@${HOST}\007"
 }
 
