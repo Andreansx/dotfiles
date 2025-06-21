@@ -49,7 +49,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec kitty --title '乙丂ん'
+bindsym $mod+Return exec kitty -o allow_remote_control=yes --title '乙丂ん'
 #bindsym $mod+Return exec --no-startup-id ~/.config/i3/scripts/auto-split.sh kitty --title '乙丂ん'
 
 #bindsym Shift+Return exec kitty
@@ -156,7 +156,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Exit i3 ?' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -192,7 +192,7 @@ bindsym $mod+r mode "resize"
 #}
 
 
-exec_always --no-startup-id feh --bg-scale /home/yeendrea/Pictures/wallpaper7.PNG
+exec --no-startup-id feh --bg-scale /home/yeendrea/Pictures/wallpaper2.PNG
 exec_always --no-startup-id picom --backend glx --animations -b
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 bindsym $mod+Shift+x exec --no-startup-id i3lock
@@ -209,10 +209,13 @@ bindsym $mod+t exec ayugram-desktop
 
 bindsym $mod+c exec firefox
 
+bindsym $mod+Shift+p exec --no-startup-id /home/yeendrea/light-theme.sh
+bindsym $mod+p exec --no-startup-id /home/yeendrea/dark-theme.sh
+
 gaps inner 15
-gaps outer 60
+gaps outer 50
 gaps top 45
-#smart_gaps on
+smart_gaps on
 
 #default_border pixel 20
 default_border none
