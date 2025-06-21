@@ -1,0 +1,118 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "display": {
+    "color": {
+      "keys": "#d4a574",
+      "title": "#f5ede4"
+    },
+    "separator": " "
+  },
+  "logo": {
+    //"type": "kitty",
+    //"source": "/home/yeendrea/Downloads/archicon2.png",
+    //"height": 10,
+    "source": "arch_small",
+      "padding": {
+      "top": 3,
+      "right": 10,
+      "left": 10
+    },
+    "color": {
+      "1": "#f2e6dc",
+      // "2": "#d4a574"
+      "2": "#b08d72"
+    }
+  },
+  "modules": [
+    {
+      "type": "custom",
+      "format": "╭─────────────────────────────────────╮",
+      "outputColor": "#b08d72"
+    },
+    {
+      "type": "title",
+      //"key": "   󰌽    ",
+      "key": "        ",
+      "format": "{#1}スティクス",
+      "outputColor": "#f2e6dc"
+    },
+    {
+      "type": "custom",
+      "format": "├─────────────────────────────────────┤",
+      "outputColor": "#b08d72"
+    },
+    {
+      "type": "os",
+      "key": "   󰣇    ",
+      "format": "{#1}{2}",
+      "outputColor": "#ef3075"
+    },
+    {
+      "type": "kernel",
+      "key": "        ",
+      "outputColor": "#b8a08c"
+    },
+    {
+      "type": "custom",
+      "format": "├─────────────────────────────────────┤",
+      "outputColor": "#b08d72"
+    },
+    {
+      "type": "host",
+      "key": "   󰌢    ",
+      "format": "{family}",
+      "outputColor": "#b8a08c"
+    },
+    {
+      "type": "cpu",
+      "key": "       ",
+      "format": "i5-5300U",
+      "outputColor": "#b8a08c"
+    },
+    {
+      "type": "memory",
+      "key": "       ",
+      "outputColor": "#b8a08c"
+    },
+    {
+      "type": "custom",
+      "format": "├─────────────────────────────────────┤",
+      "outputColor": "#b08d72"
+    },
+    {
+      "type": "wm",
+      "key": "       ",
+      "outputColor": "#d4a574"
+    },
+    {
+      "type": "wmtheme",
+      "key": "       ",
+      "outputColor": "#d4a574"
+    },
+    {
+      "type": "terminal",
+      "key": "       ",
+      "outputColor": "#d4a574"
+    },
+    {
+      "type": "shell",
+      "key": "       ",
+      "outputColor": "#d4a574"
+    },
+    {
+      "type": "custom",
+      "format": "╰─────────────────────────────────────╯",
+      "outputColor": "#b08d72"
+    },
+    {
+      "type": "custom",
+      "format": "",
+      "outputColor": "#b08d72"
+    },
+    {
+      "type": "colors",
+      "symbol": "circle",
+      "paddingLeft": 12
+    }
+  ]
+}

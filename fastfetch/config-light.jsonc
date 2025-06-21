@@ -1,0 +1,113 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "display": {
+    "color": {
+      "keys": "#8a7a6f",
+      "title": "#5e5046"
+    },
+    "separator": " "
+  },
+  "logo": {
+    "source": "arch_small",
+    "padding": {
+      "top": 3,
+      "right": 10,
+      "left": 10
+    },
+    "color": {
+      "1": "#4a3832",
+      "2": "#b47143"
+    }
+  },
+  "modules": [
+    {
+      "type": "custom",
+      "format": "╭─────────────────────────────────────╮",
+      "outputColor": "#c3b8b0"
+    },
+    {
+      "type": "title",
+      "key": "        ",
+      "format": "{#1}スティクス",
+      "outputColor": "#5e5046"
+    },
+    {
+      "type": "custom",
+      "format": "├─────────────────────────────────────┤",
+      "outputColor": "#c3b8b0"
+    },
+    {
+      "type": "os",
+      "key": "   󰣇    ",
+      "format": "{#1}{2}",
+      "outputColor": "#d95763"
+    },
+    {
+      "type": "kernel",
+      "key": "        ",
+      "outputColor": "#8a7a6f"
+    },
+    {
+      "type": "custom",
+      "format": "├─────────────────────────────────────┤",
+      "outputColor": "#c3b8b0"
+    },
+    {
+      "type": "host",
+      "key": "   󰌢    ",
+      "format": "{family}",
+      "outputColor": "#8a7a6f"
+    },
+    {
+      "type": "cpu",
+      "key": "       ",
+      "format": "i5-5300U",
+      "outputColor": "#8a7a6f"
+    },
+    {
+      "type": "memory",
+      "key": "       ",
+      "outputColor": "#8a7a6f"
+    },
+    {
+      "type": "custom",
+      "format": "├─────────────────────────────────────┤",
+      "outputColor": "#c3b8b0"
+    },
+    {
+      "type": "wm",
+      "key": "       ",
+      "outputColor": "#b47143"
+    },
+    {
+      "type": "wmtheme",
+      "key": "       ",
+      "outputColor": "#b47143"
+    },
+    {
+      "type": "terminal",
+      "key": "       ",
+      "outputColor": "#b47143"
+    },
+    {
+      "type": "shell",
+      "key": "       ",
+      "outputColor": "#b47143"
+    },
+    {
+      "type": "custom",
+      "format": "╰─────────────────────────────────────╯",
+      "outputColor": "#c3b8b0"
+    },
+    {
+      "type": "custom",
+      "format": "",
+      "outputColor": "#b08d72"
+    },
+    {
+      "type": "colors",
+      "symbol": "circle",
+      "paddingLeft": 12
+    }
+  ]
+}
