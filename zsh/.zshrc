@@ -116,6 +116,6 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 echo -e "\n\n\n\n\n\n\n\n"
-fastfetch
+ff
 echo -e "\n"
 
