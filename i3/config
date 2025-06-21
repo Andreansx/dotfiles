@@ -192,7 +192,7 @@ bindsym $mod+r mode "resize"
 #}
 
 
-exec_always --no-startup-id feh --bg-scale /home/yeendrea/Pictures/wallpaper6.PNG
+exec_always --no-startup-id feh --bg-scale /home/yeendrea/Pictures/wallpaper7.PNG
 exec_always --no-startup-id picom --backend glx --animations -b
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 bindsym $mod+Shift+x exec --no-startup-id i3lock
@@ -210,7 +210,7 @@ bindsym $mod+t exec ayugram-desktop
 bindsym $mod+c exec firefox
 
 gaps inner 15
-gaps outer 30
+gaps outer 60
 gaps top 45
 #smart_gaps on
 
