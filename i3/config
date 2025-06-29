@@ -111,6 +111,7 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
+bindsym $mod+n floating toggle
 # focus the child container
 #bindsym $mod+d focus child
 
@@ -172,10 +173,10 @@ mode "resize" {
         bindsym semicolon resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 5 px or 5 ppt
-        bindsym Down resize grow height 5 px or 5 ppt
-        bindsym Up resize shrink height 5 px or 5 ppt
-        bindsym Right resize grow width 5 px or 5 ppt
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -191,21 +192,26 @@ bindsym $mod+r mode "resize"
 #        status_command i3status
 #}
 
+exec --no-startup-id /home/yeendrea/light-theme.sh
 
-exec --no-startup-id feh --bg-scale /home/yeendrea/Pictures/wallpaper2.PNG
-exec_always --no-startup-id picom --backend glx --animations -b
+#exec --no-startup-id feh --bg-scale /home/yeendrea/Pictures/wallpaper2.PNG
+exec_always --no-startup-id picom -b
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+
+exec_always --no-startup-id /home/yeendrea/.config/polybar/bar-hider.sh
+
+
 bindsym $mod+Shift+x exec --no-startup-id i3lock
 #for screenshots with maim
-bindsym Print exec --no-startup-id maim ~/Pictures/Screenshots/$(date +%F_%T).png
+bindsym Print exec --no-startup-id maim --noopengl ~/Pictures/Screenshots/$(date +%F_%T).png
 bindsym $mod+Print exec --no-startup-id maim -s | xclip -selection clipboard -t image.png
 bindsym $mod+Shift+Print exec --no-startup-id maim -s ~/Pictues/Screenshots/$(date +%F_%T).png
-bindsym Control+Print exec --no-startup-id  maim  --delay 3 ~/Pictures/Screenshots/desktop_$(date +%s).png
+bindsym Control+Print exec --no-startup-id maim --delay 3 ~/Pictures/Screenshots/desktop_$(date +%s).png
 
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set 5%+
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
-bindsym $mod+t exec ayugram-desktop
+bindsym $mod+t exec kitty --title "nchat" zsh -c "nchat"
 
 bindsym $mod+c exec firefox
 
@@ -213,7 +219,7 @@ bindsym $mod+Shift+p exec --no-startup-id /home/yeendrea/light-theme.sh
 bindsym $mod+p exec --no-startup-id /home/yeendrea/dark-theme.sh
 
 gaps inner 15
-gaps outer 50
+gaps outer 40
 gaps top 45
 smart_gaps on
 
@@ -221,5 +227,5 @@ smart_gaps on
 default_border none
 
 for_window [class="Codium" window_type="dialog"] border none
-
+for_window [class="Thunar" window_type="dialog"] border none
 for_window [class="AyuGramDesktop" window_type="dialog"] border none
