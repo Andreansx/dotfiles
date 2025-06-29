@@ -2,102 +2,118 @@
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "display": {
     "color": {
-      "keys": "#8a7a6f",
-      "title": "#5e5046"
+      "keys": "#edbf8e",
+      "title": "#f5ede4"
     },
     "separator": " "
   },
   "logo": {
-    "source": "arch_small",
-    "padding": {
-      "top": 3,
+    //"type": "kitty",
+    "source": "/home/yeendrea/.config/fastfetch/archsmallcolors.txt",
+    //"height": 10,
+    //"source": "arch_small",
+      "padding": {
+      "top": 5,
       "right": 10,
       "left": 10
     },
     "color": {
-      "1": "#4a3832",
-      "2": "#b47143"
+      "1": "#87245C",
+      "2": "#9B245C",
+      "3": "#AE245C",
+      "4": "#C2245D",
+      "5": "#D5235D",
+      "6": "#E9235D",
+      "7": "#FC235D"
     }
   },
   "modules": [
     {
       "type": "custom",
-      "format": "╭─────────────────────────────────────╮",
-      "outputColor": "#c3b8b0"
+      "format": "",
+      "outputColor": "#b08d72"
     },
     {
       "type": "title",
+      //"key": "   󰌽    ",
       "key": "        ",
       "format": "{#1}スティクス",
-      "outputColor": "#5e5046"
+      "outputColor": "#f2e6dc"
     },
     {
       "type": "custom",
-      "format": "├─────────────────────────────────────┤",
-      "outputColor": "#c3b8b0"
+      "format": "",
+      "outputColor": "#b08d72"
     },
     {
       "type": "os",
       "key": "   󰣇    ",
       "format": "{#1}{2}",
-      "outputColor": "#d95763"
+      "outputColor": "#ef3075"
     },
     {
       "type": "kernel",
       "key": "        ",
-      "outputColor": "#8a7a6f"
+      "outputColor": "#d4b296"
     },
     {
       "type": "custom",
-      "format": "├─────────────────────────────────────┤",
-      "outputColor": "#c3b8b0"
+      "format": "",
+      "outputColor": "#b08d72"
     },
     {
       "type": "host",
       "key": "   󰌢    ",
       "format": "{family}",
-      "outputColor": "#8a7a6f"
+      "outputColor": "#d4b296"
     },
     {
       "type": "cpu",
-      "key": "       ",
-      "format": "i5-5300U",
-      "outputColor": "#8a7a6f"
+      "key": "        ",
+      "format": "{1}",
+      "outputColor": "#d4b296"
     },
     {
       "type": "memory",
-      "key": "       ",
-      "outputColor": "#8a7a6f"
+      "key": "        ",
+      "outputColor": "#d4b296"
+    },
+    {
+      "type": "disk",
+      "key": "   󰋊    ",
+      "folders": "/",
+      "format": "{1} / {2} ({9})",
+      "outputColor": "#d4b296"
     },
     {
       "type": "custom",
-      "format": "├─────────────────────────────────────┤",
-      "outputColor": "#c3b8b0"
+      "format": "",
+      "outputColor": "#b08d72"
     },
-    {
+     {
       "type": "wm",
-      "key": "       ",
-      "outputColor": "#b47143"
+      "key": "   󰖲    ",
+      "outputColor": "#d4a574"
     },
     {
       "type": "wmtheme",
-      "key": "       ",
-      "outputColor": "#b47143"
+      "key": "   󰉼    ",
+      "outputColor": "#d4a574"
     },
     {
       "type": "terminal",
-      "key": "       ",
-      "outputColor": "#b47143"
+      "key": "        ",
+      "outputColor": "#d4a574"
     },
     {
       "type": "shell",
-      "key": "       ",
-      "outputColor": "#b47143"
+      "key": "   󰞷    ",
+      "outputColor": "#d4a574"
     },
     {
       "type": "custom",
-      "format": "╰─────────────────────────────────────╯",
-      "outputColor": "#c3b8b0"
+      "format": "",
+      "outputColor": "#b08d72"
     },
     {
       "type": "custom",

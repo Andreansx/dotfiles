@@ -9,24 +9,28 @@
   },
   "logo": {
     //"type": "kitty",
-    //"source": "/home/yeendrea/Downloads/archicon2.png",
+    "source": "/home/yeendrea/.config/fastfetch/archsmallcolors.txt",
     //"height": 10,
-    "source": "arch_small",
+    //"source": "arch_small",
       "padding": {
-      "top": 3,
+      "top": 5,
       "right": 10,
       "left": 10
     },
     "color": {
-      "1": "#f2e6dc",
-      // "2": "#d4a574"
-      "2": "#b08d72"
+      "1": "#87245C",
+      "2": "#9B245C",
+      "3": "#AE245C",
+      "4": "#C2245D",
+      "5": "#D5235D",
+      "6": "#E9235D",
+      "7": "#FC235D"
     }
   },
   "modules": [
     {
       "type": "custom",
-      "format": "╭─────────────────────────────────────╮",
+      "format": "",
       "outputColor": "#b08d72"
     },
     {
@@ -38,7 +42,7 @@
     },
     {
       "type": "custom",
-      "format": "├─────────────────────────────────────┤",
+      "format": "",
       "outputColor": "#b08d72"
     },
     {
@@ -54,7 +58,7 @@
     },
     {
       "type": "custom",
-      "format": "├─────────────────────────────────────┤",
+      "format": "",
       "outputColor": "#b08d72"
     },
     {
@@ -65,43 +69,50 @@
     },
     {
       "type": "cpu",
-      "key": "       ",
-      "format": "i5-5300U",
+      "key": "        ",
+      "format": "{1}",
       "outputColor": "#b8a08c"
     },
     {
       "type": "memory",
-      "key": "       ",
+      "key": "        ",
+      "outputColor": "#b8a08c"
+    },
+    {
+      "type": "disk",
+      "key": "   󰋊    ",
+      "folders": "/",
+      "format": "{1} / {2} ({9})",
       "outputColor": "#b8a08c"
     },
     {
       "type": "custom",
-      "format": "├─────────────────────────────────────┤",
+      "format": "",
       "outputColor": "#b08d72"
     },
-    {
+     {
       "type": "wm",
-      "key": "       ",
+      "key": "   󰖲    ",
       "outputColor": "#d4a574"
     },
     {
       "type": "wmtheme",
-      "key": "       ",
+      "key": "   󰉼    ",
       "outputColor": "#d4a574"
     },
     {
       "type": "terminal",
-      "key": "       ",
+      "key": "        ",
       "outputColor": "#d4a574"
     },
     {
       "type": "shell",
-      "key": "       ",
+      "key": "   󰞷    ",
       "outputColor": "#d4a574"
     },
     {
       "type": "custom",
-      "format": "╰─────────────────────────────────────╯",
+      "format": "",
       "outputColor": "#b08d72"
     },
     {
