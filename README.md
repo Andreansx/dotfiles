@@ -20,14 +20,15 @@
 
 ## Tools
 * **WM:** i3wm
-* **Compositor:** picom-simpleanims-next-git
+* **Compositor:** picom-git
 * **Shell:** Zsh
 
 What's very important is the build of picom. This is the one that works on my machine
 
 ```bash
-yay -S picom-ftlabs-git
+yay -S picom-git
 ```
+I've had problems with `picom-simpleanims-next-git` and `picom-ftlabs-git`. The issue I have found with ftlabs fork was that it could not properly handle window states, especially `NET_WM_STATE_MAXIMIZED_VERT` and `NET_WM_STATE_MAXIMIZED_HORZ`. This made it not possible for me to make the rounded corners disappear when a window gets maximized by `smart_gaps on`.
 
 I love this particular font from Adobe called **Source Han Sans JP** since it supports Japanese characters, which is useful in my case for making the rice prettier.  You can install it from the **AUR**
 ```bash
