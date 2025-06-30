@@ -12,15 +12,18 @@
 ## Main rice - i3wm
 
 **[picom.conf](./picom/picom.conf)**  
-**[kitty.conf](./kitty/)**  
+**[kitty light](./kitty/themes/light.conf)**  
+**[kitty dark](./kitty/themes/dark.conf)**  
 **[i3](./i3/config)**  
 **[polybar](./polybar/config.ini)**  
 **[.zshrc](./zsh/.zshrc) and [.p10k.zsh](./zsh/.p10k.zsh)**  
+**[fastfetch light](./fastfetch/config-light.jsonc)**  
+**[fastfetch dark](./fastfetch/config-dark.jsonc)**  
 
-## Tools
-* **WM:** i3wm
-* **Compositor:** picom-git
-* **Shell:** Zsh
+### Scripts:  
+**[light-theme.sh](./zsh/light-theme.sh)** - binded to Mod+Shift+P 
+**[dark-theme.sh](./zsh/dark-theme.sh)** - binded to Mod+P
+**[install.sh](./install.sh)**
 
 What's very important is the build of picom. This is the one that works on my machine
 
