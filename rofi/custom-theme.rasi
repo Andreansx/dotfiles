@@ -23,7 +23,7 @@
 
 window {
     background-color: @trans-bg;
-    border:           2px;
+    border:           0px;
     border-color:     @alt-bg;
     border-radius:    35px;
     padding:          15px;
