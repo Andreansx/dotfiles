@@ -41,7 +41,7 @@ inputbar {
     background-color: @trans-alt-bg;
     text-color:       @main-fg;
     padding:          12px;
-    border-radius:    10px;
+    border-radius:    20px;
     font:             "MesloLGM Nerd Font 12";
     children:         [ prompt, entry ];
 }

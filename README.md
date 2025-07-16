@@ -44,7 +44,7 @@ sudo pacman -S ttf-meslo-nerd
 >[!IMPORTANT]
 >I will try to make the repository as organised as I can but the themes and styles need to be installed manually. Maybe in some time I will make a script for installation
 
-# 01 - main rice:
+# gnome1:
 
 ![preview02](./media/preview1.png)
 ![prompt preview](./media/prompt-preview1.png)
@@ -56,7 +56,7 @@ sudo pacman -S ttf-meslo-nerd
 *   **[font](./fonts/BlexMonoNerdFont-Regular.ttf)**
 *   **[kitty-theme](./kitty/)**
 
-# 02:
+# gnome2:
 
 <img src="./media/preview2.png">
 
