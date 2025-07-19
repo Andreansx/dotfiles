@@ -213,7 +213,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
 bindsym $mod+t exec kitty --title "nchat" zsh -c "nchat"
 
-bindsym $mod+c exec firefox
+bindsym $mod+c exec zen-browser
 
 bindsym $mod+Shift+p exec --no-startup-id /home/yeendrea/light-theme.sh
 bindsym $mod+p exec --no-startup-id /home/yeendrea/dark-theme.sh
