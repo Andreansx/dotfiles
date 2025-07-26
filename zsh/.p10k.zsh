@@ -18,7 +18,8 @@
 
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     context
-    archicon_joined
+    #archicon_joined
+    segment_terraform_joined
     dir
     vcs_joined
     newline
@@ -34,6 +35,7 @@
     #virtualenv
     #anaconda
     # pyenv
+    #segment_terraform_joined
     time_joined
     newline
   )
@@ -85,9 +87,9 @@
 
   ##################################[ dir: current directory ]##################################
   typeset -g POWERLEVEL9K_DIR_BACKGROUND='#625149'
-  typeset -g POWERLEVEL9K_DIR_FOREGROUND='#f2e6dc'
   typeset -g POWERLEVEL9K_DIR_ICON_FOREGROUND='#f2e6dc'
-  typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_unique
+  typeset -g POWERLEVEL9K_DIR_FOREGROUND='#e8c4a8'
+  typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_last 
   typeset -g POWERLEVEL9K_SHORTEN_DELIMITER=
   typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND='#b8a08c'
   typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND='#e8c4a8'
@@ -194,7 +196,7 @@ typeset -g POWERLEVEL9K_TIME_UPDATE_ON_COMMAND=false
 
 
 ##################################[ context: user@hostname ]##################################
-typeset -g POWERLEVEL9K_CONTEXT_BACKGROUND='#4a3832'
+typeset -g POWERLEVEL9K_CONTEXT_BACKGROUND='#3a2a24'
 typeset -g POWERLEVEL9K_CONTEXT_FOREGROUND='#e8c4a8'
 
 typeset -g POWERLEVEL9K_CONTEXT_ROOT_BACKGROUND='#b8a08c'
@@ -204,8 +206,8 @@ typeset -g POWERLEVEL9K_CONTEXT_REMOTE_BACKGROUND='#b8a08c'
 typeset -g POWERLEVEL9K_CONTEXT_REMOTE_FOREGROUND='#1f1b18'
 
 #typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE='スティクス'
-typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE='%B桜 %b'
-
+typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE='%B桜%b'
+#typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE=''
 # %n %m 
 typeset -g POWERLEVEL9K_CONTEXT_{DEFAULT,SUDO}_CONTENT_EXPANSION_HAS_CONTENT=true
 
@@ -214,9 +216,34 @@ typeset -g POWERLEVEL9K_CONTEXT_{DEFAULT,SUDO}_CONTENT_EXPANSION_HAS_CONTENT=tru
   typeset -g POWERLEVEL9K_DISABLE_HOT_RELOAD=true
   (( ! $+functions[p10k] )) || p10k reload
 
-  function prompt_archicon() {
-    p10k segment -b '#4a3832' -f '#e8c4a8' -t ' '
-  }
+    function prompt_archicon() {
+        p10k segment -b '#3a2a24' -f '#e8c4a8' -t ' '
+    }
+    
+    function prompt_segment_terraform() {
+  if [[ -d .terraform ]] || [[ -f *.tf(#qN[1]) ]]; then
+    local workspace="default"
+    if command -v terraform >/dev/null 2>&1; then
+      workspace=$(terraform workspace show 2>/dev/null || echo "default")
+    fi
+#625149,f2e6dc,e8c4a8
+    local bg_color='#3a2a24'
+    local fg_color='#f2e6dc'
+    local icon_color='#e8c4a8'
+    
+    local icon="%F{$icon_color$}%B 󱁢 %b%f"
+    
+    local display_text=""
+    if [[ $workspace == "default" ]]; then
+      display_text="%BTerraform%b"
+    else
+      display_text="$workspace"
+    fi
+    
+    p10k segment -b "$bg_color" -f "$fg_color" -i "$icon" -t "$display_text"
+  fi
+}
+
 # #4a3832 #cf4875
 }
 
