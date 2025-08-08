@@ -99,7 +99,7 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+#bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -217,6 +217,8 @@ bindsym $mod+c exec zen-browser
 
 bindsym $mod+Shift+p exec --no-startup-id /home/yeendrea/light-theme.sh
 bindsym $mod+p exec --no-startup-id /home/yeendrea/dark-theme.sh
+
+bindsym $mod+w exec --no-startup-id rbw rofi
 
 gaps inner 15
 gaps outer 40
