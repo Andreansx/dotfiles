@@ -10,6 +10,7 @@
   "logo": {
     //"type": "kitty",
     "source": "/home/yeendrea/.config/fastfetch/archsmallcolors.txt",
+    //"source": "/home/yeendrea/vsrxlogo",
     //"height": 10,
     //"source": "arch_small",
       "padding": {
@@ -108,6 +109,16 @@
     {
       "type": "shell",
       "key": "   󰞷    ",
+      "outputColor": "#d4a574"
+    },
+    {
+      "type": "custom",
+      "format": "",
+      "outputColor": "#b08d72"
+    },
+    {
+      "type": "localip",
+      "key": "       ",
       "outputColor": "#d4a574"
     },
     {

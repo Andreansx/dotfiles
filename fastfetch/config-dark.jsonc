@@ -2,123 +2,114 @@
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "display": {
     "color": {
-      "keys": "#edbf8e",
-      "title": "#f5ede4"
+      "keys": "#A19882",
+      "title": "#EFEBE0" 
     },
     "separator": " "
   },
   "logo": {
-    //"type": "kitty",
     "source": "/home/yeendrea/.config/fastfetch/archsmallcolors.txt",
-    //"height": 10,
-    //"source": "arch_small",
-      "padding": {
+    "padding": {
       "top": 5,
       "right": 10,
       "left": 10
     },
+    
     "color": {
-        "1": "#3A2A24",
-        "2": "#573B34",
-        "3": "#6E4D43",
-        "4": "#855F51",
-        "5": "#E0A88B",
-        "6": "#FADDC1",
-        "7": "#e31e49"  //"#e31e49"
+        "1": "#5A554A",
+        "2": "#6B6454",
+        "3": "#867D6B",
+        "4": "#A19882",
+        "5": "#BDB5A2",
+        "6": "#EFEBE0",
+        "7": "#A19882" 
     }
   },
   "modules": [
     {
       "type": "custom",
-      "format": "",
-      "outputColor": "#b08d72"
+      "format": ""
     },
     {
       "type": "title",
-      //"key": "   󰌽    ",
       "key": "        ",
       "format": "{#1}スティクス",
-      "outputColor": "#f2e6dc"
+      "outputColor": "#EFEBE0"
     },
     {
       "type": "custom",
-      "format": "",
-      "outputColor": "#b08d72"
+      "format": ""
     },
     {
       "type": "os",
       "key": "   󰣇    ",
       "format": "{#1}{2}",
-      "outputColor": "#e31e49"
+      "outputColor": "#A19882"
     },
     {
       "type": "kernel",
       "key": "        ",
-      "outputColor": "#d4b296"
+      "outputColor": "#BDB5A2" 
     },
     {
       "type": "custom",
-      "format": "",
-      "outputColor": "#b08d72"
+      "format": ""
     },
     {
       "type": "host",
       "key": "   󰌢    ",
       "format": "{family}",
-      "outputColor": "#d4b296"
+      "outputColor": "#BDB5A2"
     },
     {
       "type": "cpu",
       "key": "        ",
       "format": "{1}",
-      "outputColor": "#d4b296"
+      "outputColor": "#BDB5A2"
     },
     {
       "type": "memory",
       "key": "        ",
-      "outputColor": "#d4b296"
+      "outputColor": "#BDB5A2"
     },
     {
       "type": "disk",
       "key": "   󰋊    ",
       "folders": "/",
       "format": "{1} / {2} ({9})",
-      "outputColor": "#d4b296"
+      "outputColor": "#BDB5A2"
     },
     {
       "type": "custom",
-      "format": "",
-      "outputColor": "#b08d72"
+      "format": ""
     },
      {
       "type": "wm",
       "key": "   󰖲    ",
-      "outputColor": "#d4a574"
+      "outputColor": "#BDB5A2"
     },
     {
       "type": "wmtheme",
       "key": "   󰉼    ",
-      "outputColor": "#d4a574"
+      "outputColor": "#BDB5A2"
     },
     {
       "type": "terminal",
       "key": "        ",
-      "outputColor": "#d4a574"
+      "outputColor": "#BDB5A2"
     },
     {
       "type": "shell",
       "key": "   󰞷    ",
-      "outputColor": "#d4a574"
+      "outputColor": "#BDB5A2"
     },
     {
       "type": "custom",
-      "format": "",
-      "outputColor": "#b08d72"
+      "format": ""
     },
     {
       "type": "custom",
-      "format": "",
-      "outputColor": "#b08d72"
+      "format": ""
     },
     {
       "type": "colors",
