@@ -6,17 +6,20 @@
 
 </div>
 
->[!NOTE]
->WIP - don't have a screenshot right now
+
+![main theme](./media/preview3.png)    
+
 
 ## Main rice - i3wm
 
 **[picom.conf](./picom/picom.conf)**  
 **[kitty light](./kitty/themes/light.conf)**  
 **[kitty dark](./kitty/themes/dark.conf)**  
-**[i3](./i3/config)**  
-**[polybar](./polybar/config.ini)**  
-**[.zshrc](./zsh/.zshrc) and [.p10k.zsh](./zsh/.p10k.zsh)**  
+**[i3](./i3/config)**    
+**[polybar](./polybar/config.ini)**    
+**[.zshrc](./zsh/.zshrc)**     
+**[.p10k-dark.zsh](./zsh/.p10k-dark.zsh)**    
+**[.p10k-light.zsh](./zsh/.p10k-light.zsh)**     
 **[fastfetch light](./fastfetch/config-light.jsonc)**  
 **[fastfetch dark](./fastfetch/config-dark.jsonc)**  
 

@@ -30,9 +30,9 @@
   typeset -g POWERLEVEL9K_ICON_PADDING=moderate
   typeset -g POWERLEVEL9K_ICON_BEFORE_CONTENT=
   typeset -g POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-  typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{#A19882}╭─ "
-  typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_PREFIX="%F{#A19882}├─ "
-  typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{#A19882}╰─"
+  typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%F{#8396CD}╭─ "
+  typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_PREFIX="%F{#8396CD}├─ "
+  typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%F{#8396CD}╰─"
   typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_SUFFIX=
   typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_SUFFIX=
   typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_SUFFIX=
@@ -40,22 +40,21 @@
   typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_BACKGROUND=
   typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_GAP_BACKGROUND=
 
-
   typeset -g POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR='\uE0B5'
   typeset -g POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR=' | '
   typeset -g POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR='\uE0B4'
-  typeset -g POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR="%F{#A19882}\uE0B6"
+  typeset -g POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR="%F{#4A4147}\uE0B6"
   
   typeset -g POWERLEVEL9K_LEFT_PROMPT_LAST_SEGMENT_END_SYMBOL='\uE0B4'
-  typeset -g POWERLEVEL9K_RIGHT_PROMPT_FIRST_SEGMENT_START_SYMBOL="%F{#A19882}\uE0B6"
+  typeset -g POWERLEVEL9K_RIGHT_PROMPT_FIRST_SEGMENT_START_SYMBOL="%F{#4A4147}\uE0B6"
   typeset -g POWERLEVEL9K_LEFT_PROMPT_FIRST_SEGMENT_START_SYMBOL='\uE0B6'
-  typeset -g POWERLEVEL9K_RIGHT_PROMPT_LAST_SEGMENT_END_SYMBOL="%F{#A19882}\uE0B4"
+  typeset -g POWERLEVEL9K_RIGHT_PROMPT_LAST_SEGMENT_END_SYMBOL="%F{#4A4147}\uE0B4"
   typeset -g POWERLEVEL9K_EMPTY_LINE_LEFT_PROMPT_LAST_SEGMENT_END_SYMBOL=
 
   ################################[ prompt_char: prompt symbol ]################################
   typeset -g POWERLEVEL9K_PROMPT_CHAR_BACKGROUND=
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND='#BDB5A2'
-  typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND='#A64444'
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND='#D8D1E0'
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND='#E06B5C'
   typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIINS_CONTENT_EXPANSION='❯'
   typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VICMD_CONTENT_EXPANSION='❮'
   typeset -g POWERLEVEL9K_PROMPT_CHAR_{OK,ERROR}_VIVIS_CONTENT_EXPANSION='V'
@@ -66,13 +65,13 @@
   typeset -g POWERLEVEL9K_PROMPT_CHAR_LEFT_{LEFT,RIGHT}_WHITESPACE=
 
   ##################################[ dir: current directory ]##################################
-  typeset -g POWERLEVEL9K_DIR_BACKGROUND='#6B6454'
-  typeset -g POWERLEVEL9K_DIR_FOREGROUND='#BDB5A2'
-  typeset -g POWERLEVEL9K_DIR_ICON_FOREGROUND='#BDB5A2'
+  typeset -g POWERLEVEL9K_DIR_BACKGROUND='#8396CD'
+  typeset -g POWERLEVEL9K_DIR_FOREGROUND='#2A2226'
+  typeset -g POWERLEVEL9K_DIR_ICON_FOREGROUND='#2A2226'
   typeset -g POWERLEVEL9K_SHORTEN_STRATEGY=truncate_to_last 
   typeset -g POWERLEVEL9K_SHORTEN_DELIMITER=
-  typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND='#A19882'
-  typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND='#BDB5A2'
+  typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND='#6B5F69'
+  typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND='#2A2226'
   typeset -g POWERLEVEL9K_DIR_ANCHOR_BOLD=true
   local anchor_files=(.bzr .citc .git .hg .node-version .python-version .go-version .ruby-version .lua-version .java-version .perl-version .php-version .tool-versions .mise.toml .shorten_folder_marker .svn .terraform CVS Cargo.toml composer.json go.mod package.json stack.yaml)
   typeset -g POWERLEVEL9K_SHORTEN_FOLDER_MARKER="(${(j:|:)anchor_files})"
@@ -85,12 +84,11 @@
   typeset -g POWERLEVEL9K_DIR_SHOW_WRITABLE=v3
 
   #####################################[ vcs: git status ]######################################
-
-  typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND='#6B6454'
-  typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='#6B6454'
-  typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='#6B6454'
-  typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND='#6B6454'
-  typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND='#6B6454'
+  typeset -g POWERLEVEL9K_VCS_CLEAN_BACKGROUND='#8396CD'
+  typeset -g POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='#8396CD'
+  typeset -g POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='#8396CD'
+  typeset -g POWERLEVEL9K_VCS_CONFLICTED_BACKGROUND='#8396CD'
+  typeset -g POWERLEVEL9K_VCS_LOADING_BACKGROUND='#8396CD'
 
   typeset -g POWERLEVEL9K_VCS_BRANCH_ICON=''
   typeset -g POWERLEVEL9K_VCS_UNTRACKED_ICON='?'
@@ -102,12 +100,12 @@
       typeset -g my_git_format=$P9K_CONTENT
       return
     fi
-
-    local clean='%F{#879A71}'
-    local modified='%F{#D6B86B}'
-    local untracked='%F{#BDB5A2}'
-    local conflicted='%F{#A64444}'
-    local meta='%F{#BDB5A2}'
+    
+    local clean='%F{#92B1C7}'
+    local modified='%F{#D9946A}'
+    local untracked='%F{#B58ECB}'
+    local conflicted='%F{#E06B5C}'
+    local meta='%F{#2A2226}'
     local res
     if [[ -n $VCS_STATUS_LOCAL_BRANCH ]]; then
       local branch=${(V)VCS_STATUS_LOCAL_BRANCH}
@@ -141,38 +139,38 @@
 
   ##########################[ status: exit code of the last command ]###########################
   typeset -g POWERLEVEL9K_STATUS_EXTENDED_STATES=true
-  typeset -g POWERLEVEL9K_STATUS_BACKGROUND='#A19882'
+  typeset -g POWERLEVEL9K_STATUS_BACKGROUND='#4A4147'
   typeset -g POWERLEVEL9K_STATUS_OK=true
   typeset -g POWERLEVEL9K_STATUS_OK_VISUAL_IDENTIFIER_EXPANSION='✔'
-  typeset -g POWERLEVEL9K_STATUS_OK_FOREGROUND='#2A282B'
+  typeset -g POWERLEVEL9K_STATUS_OK_FOREGROUND='#D8D1E0'
   typeset -g POWERLEVEL9K_STATUS_ERROR=true
   typeset -g POWERLEVEL9K_STATUS_ERROR_VISUAL_IDENTIFIER_EXPANSION='✘'
-  typeset -g POWERLEVEL9K_STATUS_ERROR_FOREGROUND='#2A282B'
-  typeset -g POWERLEVEL9K_STATUS_OK_ICON_FOREGROUND='#879A71'
-  typeset -g POWERLEVEL9K_STATUS_ERROR_ICON_FOREGROUND='#A64444'
-  typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL_ICON_FOREGROUND='#A64444'
+  typeset -g POWERLEVEL9K_STATUS_ERROR_FOREGROUND='#D8D1E0'
+  typeset -g POWERLEVEL9K_STATUS_OK_ICON_FOREGROUND='#92B1C7'
+  typeset -g POWERLEVEL9K_STATUS_ERROR_ICON_FOREGROUND='#E06B5C'
+  typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL_ICON_FOREGROUND='#E06B5C'
 
   ###################[ command_execution_time: duration of the last command ]###################
-  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='#2A282B'
-  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='#A19882'
+  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND='#D8D1E0'
+  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_BACKGROUND='#4A4147'
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=3
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_PRECISION=0
   typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FORMAT='d h m s'
-  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_ICON_FOREGROUND='#D6B86B'
+  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_ICON_FOREGROUND='#D9946A'
 
   ####################################[ time: current time ]####################################
-  typeset -g POWERLEVEL9K_TIME_FOREGROUND='#2A282B'
-  typeset -g POWERLEVEL9K_TIME_BACKGROUND='#A19882'
+  typeset -g POWERLEVEL9K_TIME_FOREGROUND='#D8D1E0'
+  typeset -g POWERLEVEL9K_TIME_BACKGROUND='#4A4147'
   typeset -g POWERLEVEL9K_TIME_FORMAT='%D{%H:%M}'
   typeset -g POWERLEVEL9K_TIME_UPDATE_ON_COMMAND=false
 
   ##################################[ context: user@hostname ]##################################
-  typeset -g POWERLEVEL9K_CONTEXT_BACKGROUND='#5A554A'
-  typeset -g POWERLEVEL9K_CONTEXT_FOREGROUND='#BDB5A2'
-  typeset -g POWERLEVEL9K_CONTEXT_ROOT_BACKGROUND='#A64444'
-  typeset -g POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND='#EFEBE0'
-  typeset -g POWERLEVEL9K_CONTEXT_REMOTE_BACKGROUND='#A64444'
-  typeset -g POWERLEVEL9K_CONTEXT_REMOTE_FOREGROUND='#EFEBE0'
+  typeset -g POWERLEVEL9K_CONTEXT_BACKGROUND='#4A4147'
+  typeset -g POWERLEVEL9K_CONTEXT_FOREGROUND='#D8D1E0'
+  typeset -g POWERLEVEL9K_CONTEXT_ROOT_BACKGROUND='#E06B5C'
+  typeset -g POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND='#F2F0F5'
+  typeset -g POWERLEVEL9K_CONTEXT_REMOTE_BACKGROUND='#E06B5C'
+  typeset -g POWERLEVEL9K_CONTEXT_REMOTE_FOREGROUND='#F2F0F5'
   typeset -g POWERLEVEL9K_CONTEXT_TEMPLATE='%B桜%b'
   typeset -g POWERLEVEL9K_CONTEXT_{DEFAULT,SUDO}_CONTENT_EXPANSION_HAS_CONTENT=true
 
@@ -181,9 +179,8 @@
   typeset -g POWERLEVEL9K_DISABLE_HOT_RELOAD=true
   (( ! $+functions[p10k] )) || p10k reload
 
-
     function prompt_archicon() {
-        p10k segment -b '#5A554A' -f '#BDB5A2' -t ' '
+        p10k segment -b '#4A4147' -f '#D8D1E0' -t ' '
     }
     
     function prompt_segment_terraform() {
@@ -193,9 +190,9 @@
           workspace=$(terraform workspace show 2>/dev/null || echo "default")
         fi
         
-        local bg_color='#5A554A'
-        local fg_color='#BDB5A2'
-        local icon_color='#BDB5A2'
+        local bg_color='#4A4147'
+        local fg_color='#D8D1E0'
+        local icon_color='#92B1C7'
         
         local icon="%F{$icon_color$}%B 󱁢 %b%f"
         
