@@ -7,12 +7,13 @@
     },
     "separator": " "
   },
-  "logo": {
-    "source": "/home/yeendrea/.config/fastfetch/archsmallcolors.txt",
+  /*"logo": {
+    "source": "/home/yeendrea/.config/fastfetch/maggotnizer1.PNG",
+    "width": 24,
     "padding": {
-      "top": 5,
-      "right": 10,
-      "left": 10
+      "top": 0,
+      "right":5,
+      "left": 5
     },
     "color": {
       "1": "#2A2226",
@@ -23,7 +24,7 @@
       "6": "#D9946A",
       "7": "#B58ECB"
     }
-  },
+  },*/
   "modules": [
     {
       "type": "custom",
@@ -32,7 +33,8 @@
     {
       "type": "title",
       "key": "        ",
-      "format": "{#1}スティクス",
+      //"format": "{#1}スティクス",
+      "format": "{#1}Why u so pretty?",
       "outputColor": "#D8D1E0"
     },
     {

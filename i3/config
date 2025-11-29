@@ -11,6 +11,8 @@
 
 set $mod Mod4
 
+#exec_always --no-startup-id setxkbmap -option "altwin:swap_lalt_lwin"
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font FiraCode:monospace 8
@@ -49,7 +51,17 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec kitty -o allow_remote_control=yes --title '乙丂ん'
+bindsym $mod+Shift+Return exec kitty -o allow_remote_control=yes --title '乙丂ん'
+
+for_window [title="kitty-floating-center"] floating enable, resize set 1200 800, move position center
+for_window [title="kitty-floating-zsh"] floating enable, resize set 900 650, move position 50 400
+for_window [title="kitty-floating-nchat"] floating enable, resize set 500 600, move position 30 430
+for_window [title="kitty-third"] floating enable, resize set 640 400, move position 1200 640
+
+bindsym $mod+Return exec --no-startup-id /home/yeendrea/.config/i3/scripts/floating_kitty.sh
+
+bindsym $mod+Control+Return exec --no-startup-id /home/yeendrea/.config/i3/scripts/floating_kitty.sh nchat
+
 #bindsym $mod+Return exec --no-startup-id ~/.config/i3/scripts/auto-split.sh kitty --title '乙丂ん'
 
 #bindsym Shift+Return exec kitty
@@ -192,14 +204,13 @@ bindsym $mod+r mode "resize"
 #        status_command i3status
 #}
 
-exec --no-startup-id /home/yeendrea/light-theme.sh
+exec --no-startup-id /home/yeendrea/dark-theme.zsh
 
 #exec --no-startup-id feh --bg-scale /home/yeendrea/Pictures/wallpaper2.PNG
 exec_always --no-startup-id picom -b
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 exec_always --no-startup-id /home/yeendrea/.config/polybar/bar-hider.sh
-
 
 bindsym $mod+Shift+x exec --no-startup-id i3lock
 #for screenshots with maim
@@ -215,8 +226,8 @@ bindsym $mod+t exec kitty --title "nchat" zsh -c "nchat"
 
 bindsym $mod+c exec zen-browser
 
-bindsym $mod+Shift+p exec --no-startup-id /home/yeendrea/light-theme.sh
-bindsym $mod+p exec --no-startup-id /home/yeendrea/dark-theme.sh
+bindsym $mod+Shift+p exec --no-startup-id /home/yeendrea/light-theme.zsh
+bindsym $mod+p exec --no-startup-id /home/yeendrea/dark-theme.zsh
 
 bindsym $mod+w exec --no-startup-id rbw rofi
 

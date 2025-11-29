@@ -1,39 +1,30 @@
-/*Inspired by arthur.rasi theme by Dave Davenport */
-
 * {
-    main-bg:          #1f1b18;
-    main-fg:          #f2e6dc;
-    alt-bg:           #4a3832;
-    inactive-fg:      #b8a08c;
-    selection:        #e8c4a8;
-    selection-fg:     #1f1b18;
-    
-    accent-pink:      #e85a8a;
-    accent-green:     #7db67a;
-    accent-yellow:    #f2c26b;
-    accent-blue:      #6b9df2;
+    main-bg:          #1a1826;
+    main-fg:          #e0e0e6;
+    alt-bg:           #332e4d;
+    inactive-fg:      #7b7794;
+    selection:        #ff8b42;
+    selection-fg:     #1a1826;
+    accent:           #f0a999;
 
-    trans-bg:         rgba(31, 27, 24, 0.73);
-    trans-alt-bg:     rgba(74, 56, 50, 0.73);
+    trans-bg:         rgba(26, 24, 38, 0.85);
+    trans-alt-bg:     rgba(51, 46, 77, 0.85);
 
     background-color: transparent;
-    foreground:       @main-fg;
     font:             "MesloLGM Nerd Font 10";
 }
 
 window {
     background-color: @trans-bg;
-    border:           0px;
-    border-color:     @alt-bg;
-    border-radius:    35px;
-    padding:          15px;
+    border-radius:    24px;
+    padding:          20px;
+    width:            550px;
     location:         center;
     anchor:           center;
-    width:            500px;
 }
 
 mainbox {
-    spacing: 10px;
+    spacing: 15px;
     children: [ inputbar, listview ];
 }
 
@@ -41,49 +32,44 @@ inputbar {
     background-color: @trans-alt-bg;
     text-color:       @main-fg;
     padding:          12px;
-    border-radius:    20px;
+    border-radius:    16px;
     font:             "MesloLGM Nerd Font 12";
     children:         [ prompt, entry ];
 }
 
 prompt {
     background-color: inherit;
-    text-color:       @accent-pink;
-    padding:          0px 8px 0px 0px;
+    text-color:       @accent;
+    padding:          0px 10px 0px 0px;
 }
 
 entry {
     background-color: inherit;
-    text-color:       inherit;
-    placeholder:      "Szukaj..."; 
-    /*change if you want ^^^^ accordingly to your language*/
-    
+    text-color:       @main-fg;
+    placeholder:      "Szukaj...";
     placeholder-color: @inactive-fg;
 }
 
 listview {
     lines: 8;
-    columns: 1;
-    spacing: 5px;
+    spacing: 8px;
     background-color: transparent;
-    dynamic:          false;
+    scrollbar:        false;
 }
 
 element {
-    padding:          8px 12px;
-    border-radius:    8px;
-    background-color: transparent;
+    padding:          10px 15px;
+    border-radius:    12px;
     text-color:       @main-fg;
 }
 
 element-icon {
     size: 1.5em;
     vertical-align: 0.5;
-    padding: 0 10px 0 0;
+    padding: 0 12px 0 0;
 }
 
 element-text {
-    background-color: inherit;
     text-color:       inherit;
     vertical-align: 0.5;
 }
