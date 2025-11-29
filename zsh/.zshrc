@@ -21,6 +21,7 @@ plugins=(
   colored-man-pages
   zsh-autosuggestions
   zsh-syntax-highlighting
+  terraform
 )
 
 #export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#5e473f,dim'
@@ -37,11 +38,12 @@ alias egrep='egrep --color=auto'
 alias diff='diff --color=auto'
 alias ip='ip --color=auto'
 alias fping='ping -c 50 -i 0.2'
-alias sysctlr='systemctl reboot'
+alias rbt='systemctl reboot'
 alias pwof='systemctl poweroff'
 
+alias -g -- vim='nvim'
 alias -g -- -sybau='-Syu'
-alias -g -- ivm='vim' 
+alias -g -- ivm='nvim' 
 alias -g -- Do='Documents'
 
 alias ..='cd ..'
@@ -53,8 +55,9 @@ alias mkdir='mkdir -pv'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
+alias -g -- ytdlp='yt-dlp'
 
-alias update='yay -Syu'
+alias update='sudo pacman -Syu'
 alias cleanup='yay -Sc'
 
 alias c='clear'
@@ -97,15 +100,6 @@ extract() {
   fi
 }
 
-ssh-ccr() {
-
-  echo -ne "\033]0;MikroTik CCR2004\007"
-  echo -e "\n\e[1;35mConnecting to MikroTik CCR2004...\e[0m\n"
-  ssh admin@10.10.0.1
-  echo -ne "\033]0;${USER}@${HOST}\007"
-}
-
-
 # === PATH Configuration ===
 if [ -d "$HOME/.local/bin" ]; then
   export PATH="$HOME/.local/bin:$PATH"
@@ -117,7 +111,22 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-echo -e "\n\n\n\n\n\n\n\n"
-ff
-echo -e "\n"
+typeset -a ff_presets
+ff_presets=(
+    "$HOME/.config/fastfetch/maggotnizer3.PNG:24:5:5"
+    "$HOME/.config/fastfetch/maggotnizer1.PNG:22:3:3"
+    "$HOME/.config/fastfetch/maggotnizer0.PNG:24:0:0"
+)
 
+rand_idx=$(( $RANDOM % ${#ff_presets[@]} + 1 ))
+selected="${ff_presets[$rand_idx]}"
+
+parts=(${(@s/:/)selected})
+img_path="${parts[1]}"
+img_width="${parts[2]}"
+pad_left="${parts[3]}"
+pad_right="${parts[4]}"
+
+echo "\n\n\n\n\n"
+ff --logo "$img_path" --logo-width "$img_width" --logo-padding-left "$pad_left" --logo-padding-right "$pad_right"
+echo "\n\n"
