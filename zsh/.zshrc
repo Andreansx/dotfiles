@@ -113,9 +113,16 @@ fi
 
 typeset -a ff_presets
 ff_presets=(
-    "$HOME/.config/fastfetch/maggotnizer3.PNG:24:5:5"
-    "$HOME/.config/fastfetch/maggotnizer1.PNG:22:3:3"
-    "$HOME/.config/fastfetch/maggotnizer0.PNG:24:0:0"
+    "$HOME/.config/fastfetch/maggotnizer3.PNG:24:0:5:5"
+    "$HOME/.config/fastfetch/maggotnizer1.PNG:22:0:3:3"
+    "$HOME/.config/fastfetch/maggotnizer2.PNG:28:3:0:0"
+    "$HOME/.config/fastfetch/maggotnizer0.PNG:25:1:0:0"
+    "$HOME/.config/fastfetch/maggotnizer4.PNG:20:2:2:2"
+    "$HOME/.config/fastfetch/maggotnizer5.PNG:34:0:0:0"
+    "$HOME/.config/fastfetch/maggotnizer6.PNG:34:0:0:0"
+    "$HOME/.config/fastfetch/maggotnizer7.PNG:34:0:2:2"
+
+
 )
 
 rand_idx=$(( $RANDOM % ${#ff_presets[@]} + 1 ))
@@ -124,9 +131,10 @@ selected="${ff_presets[$rand_idx]}"
 parts=(${(@s/:/)selected})
 img_path="${parts[1]}"
 img_width="${parts[2]}"
-pad_left="${parts[3]}"
-pad_right="${parts[4]}"
+pad_top="${parts[3]}"
+pad_left="${parts[4]}"
+pad_right="${parts[5]}"
 
 echo "\n\n\n\n\n"
-ff --logo "$img_path" --logo-width "$img_width" --logo-padding-left "$pad_left" --logo-padding-right "$pad_right"
+ff --logo "$img_path" --logo-width "$img_width" --logo-padding-top "$pad_top" --logo-padding-left "$pad_left" --logo-padding-right "$pad_right"
 echo "\n\n"
