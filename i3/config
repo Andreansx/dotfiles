@@ -51,11 +51,11 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Shift+Return exec kitty -o allow_remote_control=yes --title '乙丂ん'
-
+bindsym $mod+Shift+Return exec kitty -o allow_remote_control=yes --title 'zsh'
+#--class kitty-noblur
 for_window [title="kitty-floating-center"] floating enable, resize set 1200 800, move position center
 for_window [title="kitty-floating-zsh"] floating enable, resize set 900 650, move position 50 400
-for_window [title="kitty-floating-nchat"] floating enable, resize set 500 600, move position 30 430
+for_window [title="kitty-floating-nchat"] floating enable, resize set 700 600, move position 30 430
 for_window [title="kitty-third"] floating enable, resize set 640 400, move position 1200 640
 
 bindsym $mod+Return exec --no-startup-id /home/yeendrea/.config/i3/scripts/floating_kitty.sh
@@ -224,7 +224,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
 bindsym $mod+t exec kitty --title "nchat" zsh -c "nchat"
 
-bindsym $mod+c exec zen-browser
+bindsym $mod+c exec qutebrowser
 
 bindsym $mod+Shift+p exec --no-startup-id /home/yeendrea/light-theme.zsh
 bindsym $mod+p exec --no-startup-id /home/yeendrea/dark-theme.zsh
@@ -236,10 +236,16 @@ gaps outer 40
 gaps top 45
 smart_gaps on
 
-#default_border pixel 10
 default_border none
-
+client.focused          #FF4E5E #FF4E5E #E05263 #FF4E5E #FF4E5E
+#default_border none
+#cf21-42
+#ed8-739 
+#94-e34b
+#4FB-7B3
+for_window [class="feh"] border none floating enable, resize set 900 650, move position center
+for_window [class="zen"] border none
+for_window [class="qutebrowser"] border none
 for_window [class="Codium" window_type="dialog"] border none
 for_window [class="Thunar" window_type="dialog"] border none
 for_window [class="AyuGramDesktop" window_type="dialog"] border none
-

@@ -2,8 +2,8 @@
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "display": {
     "color": {
-      "keys": "#8396CD",
-      "title": "#D8D1E0"
+      "keys": "#E05263",
+      "title": "#FF4E5E"
     },
     "separator": " "
   },
@@ -35,7 +35,8 @@
       "key": "        ",
       //"format": "{#1}スティクス",
       "format": "{#1}Why u so pretty?",
-      "outputColor": "#D8D1E0"
+      "outputColor": "#FF4E5E"
+      //D8D 1E0
     },
     {
       "type": "custom",
@@ -45,12 +46,12 @@
       "type": "os",
       "key": "   󰣇    ",
       "format": "{#1}{2}",
-      "outputColor": "#D9946A"
+      "outputColor": "#E05263"
     },
     {
       "type": "kernel",
       "key": "        ",
-      "outputColor": "#D8D1E0"
+      "outputColor": "#947E9C"
     },
     {
       "type": "custom",
@@ -60,25 +61,25 @@
       "type": "host",
       "key": "   󰌢    ",
       "format": "{family}",
-      "outputColor": "#D8D1E0"
+      "outputColor": "#947E9C"
     },
     {
       "type": "cpu",
       "key": "        ",
       "format": "{1}",
-      "outputColor": "#D8D1E0"
+      "outputColor": "#E05263"
     },
     {
       "type": "memory",
       "key": "        ",
-      "outputColor": "#D8D1E0"
+      "outputColor": "#E05263"
     },
     {
       "type": "disk",
       "key": "   󰋊    ",
       "folders": "/",
       "format": "{1} / {2} ({9})",
-      "outputColor": "#D8D1E0"
+      "outputColor": "#947E9C"
     },
     {
       "type": "custom",
@@ -87,22 +88,32 @@
     {
       "type": "wm",
       "key": "   󰖲    ",
-      "outputColor": "#D8D1E0"
+      "outputColor": "#947E9C"
     },
     {
       "type": "wmtheme",
       "key": "   󰉼    ",
-      "outputColor": "#D8D1E0"
+      "outputColor": "#947E9C"
     },
     {
       "type": "terminal",
       "key": "        ",
-      "outputColor": "#D8D1E0"
+      "outputColor": "#947E9C"
     },
     {
       "type": "shell",
       "key": "   󰞷    ",
-      "outputColor": "#D8D1E0"
+      "outputColor": "#947E9C"
+    },
+    {
+      "type": "custom",
+      "format": ""
+    },
+    {
+      "type": "command",
+      "key": "   󰒄    ",
+      "text": "tailscale ip -4 || echo Disconnected",
+      "outputColor": "#E6E3FF"
     },
     {
       "type": "custom",

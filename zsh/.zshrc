@@ -11,6 +11,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # Set name of the theme to load
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
+setopt extended_glob
 
 
 # Plugins
@@ -19,14 +20,18 @@ plugins=(
   extract
   sudo
   colored-man-pages
+  terraform
   zsh-autosuggestions
   zsh-syntax-highlighting
-  terraform
 )
 
-#export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#5e473f,dim'
 
 source $ZSH/oh-my-zsh.sh
+
+# zsh-syntax-highlighting color overrides
+typeset -g ZSH_HIGHLIGHT_STYLES[alias]='fg=#E05263'
+typeset -g ZSH_HIGHLIGHT_STYLES[suffix-alias]='fg=#E05263'
+typeset -g ZSH_HIGHLIGHT_STYLES[global-alias]='fg=#E05263'
 
 alias ls='ls --color=auto'
 alias ll='ls -alF --color=auto'
@@ -46,6 +51,31 @@ alias -g -- -sybau='-Syu'
 alias -g -- ivm='nvim' 
 alias -g -- Do='Documents'
 
+pendrv() {
+  sudo mount -o uid=1000,gid=1000 /dev/sdb ~/pendrive
+}
+
+ipauto() {
+  nmcli con mod eth0 ipv4.method 'auto' ipv4.address '' ipv4.gateway ''
+  nmcli con down eth0
+  nmcli con up eth0
+}
+ipman() {
+  nmcli con mod eth0 ipv4.method 'manual' ipv4.address '10.1.99.3/24' ipv4.gateway '10.1.99.1'
+  nmcli con down eth0
+  nmcli con up eth0
+}
+scrnrec() {
+  if [ -z "$1" ]; then
+    echo "Error: you need to add a name for the file."
+    echo "Usage: scrnrec <videoname>"
+    return 1
+  fi
+  ffmpeg -f x11grab -video_size 1920x1080 -framerate 40 -i :0.0 -c:v libx264 -preset ultrafast -crf 20 -pix_fmt yuv420p "${HOME}/Videos/ffmpeg/$1.mp4"
+
+  echo "Saved video as ~/Videos/ffmpeg/$1.mp4"
+}
+
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -56,6 +86,7 @@ alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias -g -- ytdlp='yt-dlp'
+alias -g -- ytdlpc='yt-dlp --cookies-from-browser firefox:~/.zen'
 
 alias update='sudo pacman -Syu'
 alias cleanup='yay -Sc'
@@ -121,8 +152,6 @@ ff_presets=(
     "$HOME/.config/fastfetch/maggotnizer5.PNG:34:0:0:0"
     "$HOME/.config/fastfetch/maggotnizer6.PNG:34:0:0:0"
     "$HOME/.config/fastfetch/maggotnizer7.PNG:34:0:2:2"
-
-
 )
 
 rand_idx=$(( $RANDOM % ${#ff_presets[@]} + 1 ))
@@ -135,6 +164,13 @@ pad_top="${parts[3]}"
 pad_left="${parts[4]}"
 pad_right="${parts[5]}"
 
-echo "\n\n\n\n\n"
+echo "\n\n\n"
 ff --logo "$img_path" --logo-width "$img_width" --logo-padding-top "$pad_top" --logo-padding-left "$pad_left" --logo-padding-right "$pad_right"
 echo "\n\n"
+
+eval "$(ssh-agent -s)" > /dev/null
+ssh-add ~/.ssh/id_ed25519 > /dev/null 2>&1
+
+# opencode
+export PATH=/home/yeendrea/.opencode/bin:$PATH
+export PATH=/home/yeendrea/.local/share/gem/ruby/3.4.0/bin:$PATH
