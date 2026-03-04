@@ -1,17 +1,17 @@
 # Dotfiles
 
 ![apple](https://img.shields.io/badge/MacOS%2026.3-%23000000?style=for-the-badge&logo=apple&logoSize=auto)
-
 ![archlinux](https://img.shields.io/badge/Arch%20Linux-%231793D1?style=for-the-badge&logo=archlinux&logoColor=white&logoSize=auto)
 
 I dumped everything from Arch linux into [./archlinux/](./archlinux/)   
 
+## Main i3wm rice on Arch Linux
 
+This is the latest rice on my ThinkPad T450s.
 ![arch](./media/archlinuxi3wm.png)    
+![arch](./media/archlinuxi3wm1.png)    
 
-
-## Main i3wm rice
-
+### Files:   
 **[picom.conf](./archlinux/picom/picom.conf)**  
 **[kitty light](./archlinux/kitty/themes/light.conf)** - not used  
 **[kitty dark](./archlinux/kitty/themes/dark.conf)**  
@@ -22,6 +22,8 @@ I dumped everything from Arch linux into [./archlinux/](./archlinux/)
 **[.p10k-light.zsh](./archlinux/zsh/.p10k-light.zsh)** - not used      
 **[fastfetch light](./archlinux/fastfetch/config-light.jsonc)** - not used  
 **[fastfetch dark](./archlinux/fastfetch/config-dark.jsonc)**  
+**[Lazyvim](./archlinux/nvim/)**   
+
 
 ### Scripts:  
 **[light-theme.sh](./zsh/light-theme.sh)** - binded to Mod+Shift+P 
@@ -35,40 +37,3 @@ yay -S picom-git
 ```
 I've had problems with `picom-simpleanims-next-git` and `picom-ftlabs-git`. The issue I have found with ftlabs fork was that it could not properly handle window states, especially `NET_WM_STATE_MAXIMIZED_VERT` and `NET_WM_STATE_MAXIMIZED_HORZ`. This made it not possible for me to make the rounded corners disappear when a window gets maximized by `smart_gaps on`.
 
-I love this particular font from Adobe called **Source Han Sans JP** since it supports Japanese characters, which is useful in my case for making the rice prettier.  You can install it from the **AUR**
-```bash
-yay -S adobe-source-han-sans-jp-fonts
-```
-You can also use **MesloLGL Nerd Font**. 
-```zsh
-sudo pacman -S ttf-meslo-nerd
-```
-
->[!IMPORTANT]
->I will try to make the repository as organised as I can but the themes and styles need to be installed manually. Maybe in some time I will make a script for installation
-
-#
-*   Hardware:   **ThinkPad T450s**  
-*   OS: **Arch Linux**  
-*   DE: **GNOME 48.2**  
-*   Terminal: **Kitty 0.42.1**  
-*   Terminal font: **BlexMonoNF**  
-*   Cursor: **Bibata cursor Ice**
-
-
-<h2>Fonts</h2>
-</div>
-
-The configuration files for Kitty require a **Nerd Font**. You can install one using `pacman`:
-
-```bash
-pacman -S ttf-meslo-nerd
-```
-
->[!TIP]
->If the font you like isn't available in the Arch extras repository, you can grab it using `yay` or `paru`
-
-```bash
-yay -S ttf-ibmplex-mono-nerd
-```
-<div align="center">
