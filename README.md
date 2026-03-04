@@ -27,7 +27,7 @@ This is the latest rice on my ThinkPad T450s.
 
 ### Scripts:  
 
-**[install.sh](./scripts/install.sh)**   
+**[install.sh](./scripts/install.sh)** - installs Dotfiles for archlinux   
 
 Only for i3wm:
 *   **[light-theme.zsh](./archlinux/zsh/light-theme.zsh)** - binded to Mod+Shift+P 
