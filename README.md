@@ -26,9 +26,13 @@ This is the latest rice on my ThinkPad T450s.
 
 
 ### Scripts:  
-**[light-theme.sh](./zsh/light-theme.sh)** - binded to Mod+Shift+P 
-**[dark-theme.sh](./zsh/dark-theme.sh)** - binded to Mod+P
-**[install.sh](./install.sh)**
+
+**[install.sh](./scripts/install.sh)**   
+
+Only for i3wm:
+*   **[light-theme.zsh](./archlinux/zsh/light-theme.zsh)** - binded to Mod+Shift+P 
+*   **[dark-theme.zsh](./archlinux/zsh/dark-theme.zsh)** - binded to Mod+P
+
 
 What's very important is the build of picom. This is the one that works on my machine
 

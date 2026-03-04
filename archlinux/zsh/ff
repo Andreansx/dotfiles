@@ -1,0 +1,2 @@
+#!/bin/sh
+exec fastfetch --config '/home/yeendrea/.config/fastfetch/config-dark.jsonc' "$@"
