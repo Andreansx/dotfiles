@@ -1,27 +1,27 @@
-<div align="center">
-<h1>My dotfiles</h1>
-  <img alt="Static Badge" src="https://img.shields.io/badge/arch-%231793D1?style=for-the-badge&logo=archlinux&logoColor=white&logoSize=auto">
-<img alt="Static Badge" src="https://img.shields.io/badge/i3wm-%2352C0FF?style=for-the-badge&logo=i3&logoColor=white&logoSize=auto">
-<h4>Here I share all my configuration files.</br> Everything is done on a Lenovo ThinkPad T450s with Arch Linux </h4>
+# Dotfiles
 
-</div>
+![apple](https://img.shields.io/badge/MacOS%2026.3-%23000000?style=for-the-badge&logo=apple&logoSize=auto)
 
+![archlinux](https://img.shields.io/badge/Arch%20Linux-%231793D1?style=for-the-badge&logo=archlinux&logoColor=white&logoSize=auto)
 
-![main theme](./media/preview3.png)    
+I dumped everything from Arch linux into [./archlinux/](./archlinux/)   
 
 
-## Main rice - i3wm
+![arch](./media/archlinuxi3wm.png)    
 
-**[picom.conf](./picom/picom.conf)**  
-**[kitty light](./kitty/themes/light.conf)**  
-**[kitty dark](./kitty/themes/dark.conf)**  
-**[i3](./i3/config)**    
-**[polybar](./polybar/config.ini)**    
-**[.zshrc](./zsh/.zshrc)**     
-**[.p10k-dark.zsh](./zsh/.p10k-dark.zsh)**    
-**[.p10k-light.zsh](./zsh/.p10k-light.zsh)**     
-**[fastfetch light](./fastfetch/config-light.jsonc)**  
-**[fastfetch dark](./fastfetch/config-dark.jsonc)**  
+
+## Main i3wm rice
+
+**[picom.conf](./archlinux/picom/picom.conf)**  
+**[kitty light](./archlinux/kitty/themes/light.conf)** - not used  
+**[kitty dark](./archlinux/kitty/themes/dark.conf)**  
+**[i3](./archlinux/i3/config)**    
+**[polybar](./archlinux/polybar/config.ini)**    
+**[.zshrc](./archlinux/zsh/.zshrc)**     
+**[.p10k-dark.zsh](./archlinux/zsh/.p10k-dark.zsh)**    
+**[.p10k-light.zsh](./archlinux/zsh/.p10k-light.zsh)** - not used      
+**[fastfetch light](./archlinux/fastfetch/config-light.jsonc)** - not used  
+**[fastfetch dark](./archlinux/fastfetch/config-dark.jsonc)**  
 
 ### Scripts:  
 **[light-theme.sh](./zsh/light-theme.sh)** - binded to Mod+Shift+P 
@@ -46,28 +46,6 @@ sudo pacman -S ttf-meslo-nerd
 
 >[!IMPORTANT]
 >I will try to make the repository as organised as I can but the themes and styles need to be installed manually. Maybe in some time I will make a script for installation
-
-# gnome1:
-
-![preview02](./media/preview1.png)
-![prompt preview](./media/prompt-preview1.png)
-## Files
-*   **[kitty.conf](./kitty/kitty.conf)**
-*   **[.bashrc](./Bash/01.bashrc)**
-*   **[fastfetch](./fastfetch/config1.jsonc)**
-*   **[gnome-extensions](./gnome-extensions/)**
-*   **[font](./fonts/BlexMonoNerdFont-Regular.ttf)**
-*   **[kitty-theme](./kitty/)**
-
-# gnome2:
-
-<img src="./media/preview2.png">
-
-## Files
-*   **[kitty.conf](./kitty/kitty.conf)**
-*   **[.bashrc](./Bash/02.bashrc)**
-*   **[wallpaper](./wallpapers/IMG_3151.jpeg)**
-*   **[fastfetch](./fastfetch/config2.jsonc)**
 
 #
 *   Hardware:   **ThinkPad T450s**  
