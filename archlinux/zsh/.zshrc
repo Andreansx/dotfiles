@@ -165,7 +165,7 @@ pad_left="${parts[4]}"
 pad_right="${parts[5]}"
 
 echo "\n\n\n"
-ff --logo "$img_path" --logo-width "$img_width" --logo-padding-top "$pad_top" --logo-padding-left "$pad_left" --logo-padding-right "$pad_right"
+ff --logo-type kitty --logo "$img_path" --logo-width "$img_width" --logo-padding-top "$pad_top" --logo-padding-left "$pad_left" --logo-padding-right "$pad_right"
 echo "\n\n"
 
 eval "$(ssh-agent -s)" > /dev/null
