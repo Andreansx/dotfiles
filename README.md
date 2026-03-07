@@ -5,6 +5,13 @@
 
 I dumped everything from Arch linux into [./archlinux/](./archlinux/)   
 
+
+## My main config on MacOS Tahoe 26.3 
+
+### Files 
+* [.zshrc](./MacOS/zsh/.zshrc)
+
+
 ## Main i3wm rice on Arch Linux
 
 This is the latest rice on my ThinkPad T450s.
