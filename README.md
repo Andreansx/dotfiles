@@ -10,6 +10,9 @@ I dumped everything from Arch linux into [./archlinux/](./archlinux/)
 
 ### Files 
 * [.zshrc](./MacOS/zsh/.zshrc)
+* [nvim](./MacOS/nvim/)
+* [fastfetch](./MacOS/fastfetch/config.jsonc)
+* [kitty](./MacOS/kitty/kitty.conf)
 
 
 ## Main i3wm rice on Arch Linux

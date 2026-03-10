@@ -110,8 +110,9 @@ ZSH_HIGHLIGHT_STYLES[global-alias]='fg=#CBA6F7,bold'
 
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-echo "\n\n"
+#echo "\n\n"
 fastfetch 
+echo "\n\n"
 
 eval "$(ssh-agent -s)" > /dev/null
 ssh-add -l > /dev/null 2>&1 || ssh-add --apple-use-keychain ~/.ssh/id_ed25519 > /dev/null 2>&1

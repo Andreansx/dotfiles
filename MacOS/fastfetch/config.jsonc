@@ -9,16 +9,25 @@
   },
   "logo": {
     "type": "kitty-icat",
-    "source": "/Users/andreansx/.config/fastfetch/2000488535.png",
-    "width": 28,
+    "source": "/Users/andreansx/.config/fastfetch/weld3.png",
+    "width": 26,
     "padding": {
       "top": 0,
       "right":0,
-      "left": 0
+      "left": 0,
+      "bottom": 0
     } 
   },
 
   "modules": [
+    {
+      "type": "custom",
+      "format": ""
+    },
+    {
+      "type": "custom",
+      "format": ""
+    },
     {
       "type": "custom",
       "format": ""
@@ -99,6 +108,18 @@
       "type": "colors",
       "symbol": "circle",
       "paddingLeft": 12
-    }
+    },
+    {
+      "type": "custom",
+      "format": ""
+    },
+    {
+      "type": "custom",
+      "format": ""
+    },
+    {
+      "type": "custom",
+      "format": ""
+    },
   ]
 }
