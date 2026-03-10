@@ -5,15 +5,20 @@
 
 I dumped everything from Arch linux into [./archlinux/](./archlinux/)   
 
+> [!NOTE]
+> Artworks used as the fastfetch logos are **not mine**. The one on MacOS config belongs to Milplina and the ones on the Arch Linux belong to Maggotnizer.
 
 ## My main config on MacOS Tahoe 26.3 
+
+![macos](./media/macos0.png)   
+![macos](./media/macos1.png)   
+![macos](./media/macos2.png)   
 
 ### Files 
 * [.zshrc](./MacOS/zsh/.zshrc)
 * [nvim](./MacOS/nvim/)
 * [fastfetch](./MacOS/fastfetch/config.jsonc)
 * [kitty](./MacOS/kitty/kitty.conf)
-
 
 ## Main i3wm rice on Arch Linux
 
