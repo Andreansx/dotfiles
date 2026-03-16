@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#fi
+
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -13,6 +20,8 @@ plugins=(
   zsh-autosuggestions
   zsh-syntax-highlighting
 )
+
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#AEB7C2'
 
 source $ZSH/oh-my-zsh.sh
 
@@ -107,12 +116,8 @@ ZSH_HIGHLIGHT_STYLES[builtin]='fg=#89B4FA,bold'
 ZSH_HIGHLIGHT_STYLES[unknown-token]='fg=#F38BA8'
 ZSH_HIGHLIGHT_STYLES[global-alias]='fg=#CBA6F7,bold'
 
-
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-#echo "\n\n"
-fastfetch 
-echo "\n\n"
 
 eval "$(ssh-agent -s)" > /dev/null
 ssh-add -l > /dev/null 2>&1 || ssh-add --apple-use-keychain ~/.ssh/id_ed25519 > /dev/null 2>&1
@@ -122,4 +127,8 @@ true
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
 
-
+fastfetch
+echo ""
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/andreansx/.lmstudio/bin"
+# End of LM Studio CLI section

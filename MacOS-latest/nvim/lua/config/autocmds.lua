@@ -7,9 +7,22 @@
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 
+local jinja_match_group = vim.api.nvim_create_augroup("jinja_custom_matches", { clear = true })
+
 vim.api.nvim_create_autocmd("FileType", {
-  pattern = { "yaml", "yml" },
+  group = jinja_match_group,
+  pattern = { "yaml", "yml", "jinja", "jinja2", "htmldjango" },
   callback = function()
-    vim.fn.matchadd("Jinja2Var", "{{.\\{-}}}")
+    if vim.w.jinja_match_ids then
+      for _, id in ipairs(vim.w.jinja_match_ids) do
+        pcall(vim.fn.matchdelete, id)
+      end
+    end
+
+    vim.w.jinja_match_ids = {
+      vim.fn.matchadd("Jinja2Var", "{{.\\{-}}}"),
+      vim.fn.matchadd("Jinja2Block", "{%\\_.\\{-}%}"),
+      vim.fn.matchadd("Jinja2Comment", "{#\\_.\\{-}#}"),
+    }
   end,
 })
