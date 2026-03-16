@@ -15,10 +15,11 @@ I dumped everything from Arch linux into [./archlinux/](./archlinux/)
 ![macos](./media/macos2.png)   
 
 ### Files 
-* [.zshrc](./MacOS/zsh/.zshrc)
-* [nvim](./MacOS/nvim/)
-* [fastfetch](./MacOS/fastfetch/config.jsonc)
-* [kitty](./MacOS/kitty/kitty.conf)
+* [.zshrc](./MacOS-v1/zsh/.zshrc)
+* [nvim](./MacOS-v1/nvim/)
+* [fastfetch](./MacOS-v1/fastfetch/config.jsonc)
+* [kitty](./MacOS-v1/kitty/kitty.conf)
+* [p10k](./MacOS-v1/zsh/.p10k.zsh)
 
 ## Main i3wm rice on Arch Linux
 
