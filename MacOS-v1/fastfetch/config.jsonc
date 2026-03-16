@@ -1,0 +1,125 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "display": {
+    "color": {
+      "keys": "#CBA6F7",
+      "title": "#F5C2E7"
+    },
+    "separator": " "
+  },
+  "logo": {
+    "type": "kitty-icat",
+    "source": "/Users/andreansx/.config/fastfetch/weld3.png",
+    "width": 26,
+    "padding": {
+      "top": 0,
+      "right":0,
+      "left": 0,
+      "bottom": 0
+    } 
+  },
+
+  "modules": [
+    {
+      "type": "custom",
+      "format": ""
+    },
+    {
+      "type": "custom",
+      "format": ""
+    },
+    {
+      "type": "custom",
+      "format": ""
+    },
+    {
+      "type": "title",
+      "key": "        ",
+      "format": "{#1}Why u so pretty?",
+      "outputColor": "#F5C2E7"
+    },
+    {
+      "type": "custom",
+      "format": ""
+    },
+    {
+      "type": "os",
+      "key": "       ",
+      "format": "{#1}{2}",
+      "outputColor": "#CBA6F7"
+    },
+    {
+      "type": "kernel",
+      "key": "        ",
+      "outputColor": "#A6ADC8"
+    },
+    {
+      "type": "custom",
+      "format": ""
+    },
+    {
+      "type": "host",
+      "key": "   󰌢    ",
+      "format": "{family}",
+      "outputColor": "#A6ADC8"
+    },
+    {
+      "type": "cpu",
+      "key": "        ",
+      "format": "{1}",
+      "outputColor": "#CBA6F7"
+    },
+    {
+      "type": "memory",
+      "key": "        ",
+      "outputColor": "#CBA6F7"
+    },
+    {
+      "type": "disk",
+      "key": "   󰋊    ",
+      "folders": "/",
+      "format": "{1} / {2} ({9})",
+      "outputColor": "#A6ADC8"
+    },
+    {
+      "type": "custom",
+      "format": ""
+    },
+    {
+      "type": "wm",
+      "key": "   󰖲    ",
+      "outputColor": "#A6ADC8"
+    },
+    {
+      "type": "terminal",
+      "key": "        ",
+      "outputColor": "#A6ADC8"
+    },
+    {
+      "type": "shell",
+      "key": "   󰞷    ",
+      "outputColor": "#A6ADC8"
+    },
+    {
+      "type": "custom",
+      "format": ""
+    },
+    {
+      "type": "colors",
+      "symbol": "circle",
+      "paddingLeft": 12
+    },
+    {
+      "type": "custom",
+      "format": ""
+    },
+    {
+      "type": "custom",
+      "format": ""
+    },
+    {
+      "type": "custom",
+      "format": ""
+    },
+  ]
+}
